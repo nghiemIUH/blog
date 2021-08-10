@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap");
+
+.header__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lora", "serif";
+    flex-direction: column;
+}
+
+.bg {
+    background: url("/src/img/bg.jpeg") no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    min-height: 750px;
+}
+.header1 {
+    position: fixed;
+    top: 16%;
+    font-size: 2rem;
+    text-shadow: 2px 2px 2px #fff;
+}
+.header2 {
+    position: fixed;
+    top: 20%;
+    font-size: 4rem;
+    text-shadow: 2px 2px 2px #fff;
+}
