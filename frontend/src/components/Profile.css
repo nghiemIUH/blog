@@ -1,0 +1,8 @@
+.profile {
+    width: 200px;
+    height: 300px;
+    position: fixed;
+    top: 274px;
+    right: 30px;
+    border: 1px solid black;
+}

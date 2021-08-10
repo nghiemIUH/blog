@@ -18,7 +18,7 @@ function App() {
                 <Route exact path="/product">
                     <Product />
                 </Route>
-                <Route exact path="/blog/:title">
+                <Route exact path="/blog/detail/:title">
                     <BlogDetail />
                 </Route>
             </div>
