@@ -65,6 +65,29 @@
     border-radius: 4px;
 }
 
+.but {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+}
+
+.but button {
+    padding: 8px 15px;
+    margin: 5px;
+    background-color: #3acbf7;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    border: 1px solid #3acbf7;
+}
+
+.but button:hover {
+    padding: 8px 15px;
+    transition: all 0.3s ease-out;
+    color: #6568f4;
+    transition: 250ms;
+}
+
 @media screen and (max-width: 650px) {
     .navbar__items {
         position: relative;
