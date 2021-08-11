@@ -3,8 +3,10 @@ import Home from "./components/Home";
 import { BrowserRouter, Route } from "react-router-dom";
 import Blog from "./components/blog/Blog";
 import Product from "./components/product/Product";
-import Navbar from "./components/navbar/Navbar";
 import BlogDetail from "./components/blog/BlogDetail";
+import SignUp from "./components/user/SignUp";
+import Login from "./components/user/LogIn";
+
 function App() {
     return (
         <BrowserRouter>
@@ -20,6 +22,12 @@ function App() {
                 </Route>
                 <Route exact path="/blog/detail/:title">
                     <BlogDetail />
+                </Route>
+                <Route exact path="/sign-up">
+                    <SignUp />
+                </Route>
+                <Route exact path="/log-in">
+                    <Login />
                 </Route>
             </div>
         </BrowserRouter>

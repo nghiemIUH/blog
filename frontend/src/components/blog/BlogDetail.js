@@ -2,7 +2,8 @@ import React from "react";
 import Navbar from "../navbar/Navbar";
 import { withRouter } from "react-router-dom";
 import "./BlogDetail.css";
-import Profile from "../Profile";
+import Profile from "../user/Profile";
+import Footer from "../Footer";
 
 class BlogDetail extends React.Component {
     title = this.props.match.params.title;
@@ -17,10 +18,13 @@ class BlogDetail extends React.Component {
                         <div className="blog_content__left">
                             this is blog detail
                         </div>
-                        <Profile />
-                        <div className="blog_content__right"></div>
+
+                        <div className="blog_content__right">
+                            <Profile />
+                        </div>
                     </div>
                 </div>
+                <Footer />
             </>
         );
     }
