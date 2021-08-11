@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../navbar/Navbar";
 import { withRouter } from "react-router-dom";
 import "./BlogDetail.css";
-import Profile from "../Profile";
+import Profile from "../user/Profile";
 
 class BlogDetail extends React.Component {
     title = this.props.match.params.title;

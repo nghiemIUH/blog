@@ -71,16 +71,20 @@ class Navbar extends React.Component {
                         );
                     })}
                     <li>
-                        <Link className="nav__links__mobile">Sign up</Link>
-                        <Link className="nav__links__mobile">Log in</Link>
+                        <Link className="nav__links__mobile" to="/sign-up">
+                            Sign up
+                        </Link>
+                        <Link className="nav__links__mobile" to="/log-in">
+                            Log in
+                        </Link>
                     </li>
                 </ul>
 
                 <div className="but">
-                    <Link>
+                    <Link to="/sign-up">
                         <button>Sign up</button>
                     </Link>
-                    <Link>
+                    <Link to="/log-in">
                         <button>Log in</button>
                     </Link>
                 </div>
