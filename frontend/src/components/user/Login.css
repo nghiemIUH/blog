@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital@1&display=swap");
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.login__title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: "Old Standard TT", serif;
+    color: #f07571;
+    padding: 30px;
+}
+.login__form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: -1px 7px 20px 2px rgb(0 0 0 / 43%);
+}
+
+.login__form form {
+    width: 100%;
+    padding: 20px;
+}
+.login__form form div {
+    width: 100%;
+    margin: 10px;
+}
+
+.login__form label {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.login__form input {
+    width: 100%;
+    height: 25px;
+    font-size: 1.05rem;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 1px;
+}
+.login__form input:focus {
+    outline: none;
+}
+
+.btn__login {
+    padding: 8px 20px;
+    margin: 10px;
+    font-weight: 550;
+    font-size: 1.1rem;
+    background-color: #09c1de;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+}
+.btn__login:hover {
+    background-color: #79ebfc;
+    cursor: pointer;
+    color: gray;
+}
+@media screen and (max-width: 450px) {
+    .login__form {
+        width: 90vw;
+    }
+}

@@ -6,6 +6,7 @@ import Product from "./components/product/Product";
 import BlogDetail from "./components/blog/BlogDetail";
 import SignUp from "./components/user/SignUp";
 import Login from "./components/user/LogIn";
+import Editor from "./components/blog/Editor";
 
 function App() {
     return (
@@ -28,6 +29,9 @@ function App() {
                 </Route>
                 <Route exact path="/log-in">
                     <Login />
+                </Route>
+                <Route exact path="/editor">
+                    <Editor />
                 </Route>
             </div>
         </BrowserRouter>

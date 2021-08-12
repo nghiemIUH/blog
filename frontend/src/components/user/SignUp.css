@@ -6,14 +6,15 @@
 
 .my__form {
     width: 500px;
-    height: 600px;
+    height: 550px;
     border-radius: 10px;
     background-color: #fff;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
+    border: none;
+    box-shadow: -1px 7px 20px 2px rgb(0 0 0 / 43%);
 }
 .title__signup {
     font-size: 2rem;
@@ -67,4 +68,49 @@
 }
 .input__form input:focus {
     outline: none;
+}
+.label__selectfile {
+    padding: 4px 8xp;
+    background-color: #42b6f5;
+    align-items: center;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 150%;
+}
+
+.label__selectfile:hover {
+    cursor: pointer;
+    background-color: #88d1f8;
+}
+@media screen and (max-width: 600px) {
+    .my__form {
+        width: 80%;
+        height: 650px;
+    }
+
+    .input__form div {
+        flex-direction: column;
+        margin: 5px;
+    }
+    .input__form input {
+        width: 60vw;
+    }
+    .choose__file {
+        flex-direction: row !important;
+        font-size: 1rem !important;
+        width: 20vw;
+    }
+    .title__avatar {
+        display: block !important;
+        min-width: 20vw !important;
+        width: 10vw;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .choose__file {
+        flex-direction: column !important;
+        font-size: 1rem !important;
+        width: 20vw;
+    }
 }

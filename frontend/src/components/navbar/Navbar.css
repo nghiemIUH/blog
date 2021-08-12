@@ -161,4 +161,7 @@
         color: #6568f4;
         transition: 250ms;
     }
+    .but {
+        display: none;
+    }
 }
