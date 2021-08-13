@@ -2,5 +2,8 @@
     display: flex;
     justify-content: center;
     margin-top: 50px;
-    position: absolute;
+}
+
+SunEditor {
+    border: 1px solid blue;
 }

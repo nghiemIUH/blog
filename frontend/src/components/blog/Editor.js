@@ -4,7 +4,7 @@ import SunEditor from "suneditor-react";
 import "suneditor/dist/css/suneditor.min.css";
 import plugins from "suneditor/src/plugins";
 import Navbar from "../navbar/Navbar";
-import katex from "katex";
+
 class Editor extends React.Component {
     render() {
         return (
@@ -16,7 +16,6 @@ class Editor extends React.Component {
                         setAllPlugins={false}
                         setAllPlugins={true}
                         setOptions={{
-                            katex: katex,
                             plugins: plugins,
                             height: 200,
                             buttonList: [
@@ -54,8 +53,9 @@ class Editor extends React.Component {
                                     "showBlocks",
                                     "codeView",
                                     "preview",
+                                    "print",
+                                    "save",
                                     "template",
-                                    "math",
                                 ],
                             ],
                         }}
