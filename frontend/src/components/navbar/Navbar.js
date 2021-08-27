@@ -31,7 +31,7 @@ class Navbar extends React.Component {
                         to="/"
                         style={{ textDecoration: "none", color: "#fff" }}
                     >
-                        My Blog <i className="fab fa-react"></i>
+                        Linh Béo Blog <i className="fab fa-react"></i>
                     </Link>
                 </h1>
                 <div className="menu__icon" onClick={this.handleClick}>
