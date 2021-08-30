@@ -1,9 +1,13 @@
-import { Background, Container } from './styles/home'
+import { Container, Head, Frame } from './styles/home'
 
-export default function Home({ bg = true, children, ...restProps }) {
-    return bg ? <Background {...restProps}>{children}</Background> : children;
+export default function Home({ children, ...restProps }) {
+    return <Container{...restProps}>{children}</Container>
+}
+
+Home.Head = function HomeHead({ bg = true, children, ...restProps }) {
+    return bg ? <Head {...restProps}>{children}</Head> : children;
 };
 
 Home.Frame = function HomeFrame({ children, ...restProps }) {
-    return <Container {...restProps}>{children}</Container>;
+    return <Frame {...restProps}>{children}</Frame>;
 };

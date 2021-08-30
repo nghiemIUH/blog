@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-export const Background = styled.div`
+export const Head = styled.div`
     display: flex;
     flex-direction: column;
     opacity: 0.8;
@@ -8,9 +8,7 @@ export const Background = styled.div`
         top left / cover no-repeat;
 `;
 
-export const Frame = styled.div``;
-
-export const Container = styled.div`
+export const Frame = styled.div`
     display: flex;
     margin: 0 56px;
     height: 64px;
@@ -25,4 +23,7 @@ export const Container = styled.div`
     @media (max-width: 1000px){
         margin: 0 30px;
     }
+`;
+
+export const Container = styled.div`
 `;

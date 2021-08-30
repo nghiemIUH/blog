@@ -2,10 +2,12 @@ import styled from "styled-components";
 import { Link as ReacRouterLink } from 'react-router-dom';
 
 export const Container = styled.div`
+    z-index: 1;
+    position: fixed;
+    width: -webkit-fill-available;
+    background: linear-gradient(to bottom, #000000, #736F6E);
     display: flex;
-    margin: 0 56px;
-    padding: 25px 0;
-    alight-items: center;
+    padding: 25px 50px;
     justify-content: space-between;
     a{
         display: flex;
@@ -17,10 +19,8 @@ export const Menu = styled.div`
 `;
 
 export const Logo = styled.img`
-    height: 70px;
-    margin: -20px 0 -20px 0;
-    border-radius: 35px;
-    background: #000000;
+    height: 90px;
+    margin: -30px 0;
 `;
 
 export const ButtonLink = styled(ReacRouterLink)`

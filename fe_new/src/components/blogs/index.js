@@ -1,4 +1,4 @@
-import { Container, Frame, Infor, A, UseAva, UseName, Title, Date } from "./styles/blogs"
+import { Container, Frame, SideBar, Items, Infor, A, UseAva, UseName, Title, Date, TextUpppercase } from "./styles/blogs"
 
 export default function Blogs({ children, ...resProps }) {
     return <Container {...resProps}>{children}</Container>
@@ -6,6 +6,10 @@ export default function Blogs({ children, ...resProps }) {
 
 Blogs.Frame = function BlogsFrame({ children, ...resProps }) {
     return <Frame {...resProps}>{children}</Frame>
+}
+
+Blogs.Items = function BlogItems({ children, ...resProps }) {
+    return <Items {...resProps}>{children}</Items>
 }
 
 Blogs.Infor = function BlogsInfor({ children, ...resProps }) {
@@ -28,6 +32,14 @@ Blogs.Title = function BlogsTitle({ children, ...resProps }) {
     return <Title {...resProps}>{children}</Title>
 }
 
-Blogs.Date = function BlogDate({ children, ...resProps }) {
+Blogs.Date = function BlogsDate({ children, ...resProps }) {
     return <Date {...resProps}>{children}</Date>
+}
+
+Blogs.SideBar = function BlogsSideBar({ children, ...resProps }) {
+    return <SideBar {...resProps}>{children}</SideBar>
+}
+
+Blogs.TextUpppercase = function BlogsTextUpppercase({ children, ...resProps }) {
+    return <TextUpppercase {...resProps}>{children}</TextUpppercase>
 }
