@@ -16,6 +16,7 @@ export const Frame = styled.a`
     height: 300px;
     width: 450px;
     text-decoration: none;
+
 `;
 
 export const Image = styled.img`
