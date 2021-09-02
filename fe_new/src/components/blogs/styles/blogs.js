@@ -8,19 +8,25 @@ export const Container = styled.div`
     justify-content: space-between;
 `;
 
-export const Frame = styled.div`
-    width: 60%;
+export const Items = styled.div`
+    border-bottom: 1px solid #696969;
+    display: flex;
+    margin: 10px 10px;
+    min-height: 80px;
 `;
 
 export const SideBar = styled.div`
     width: 35%;
+    ${Items}:last-of-type {
+        border-bottom: none;
+    }
 `;
 
-export const Items = styled.div`
-    border-bottom: 1px solid #696969;
-    display: flex;
-    height: 80px;
-    margin: 10px 10px;
+export const Frame = styled.div`
+    width: 60%;
+    ${Items}:last-of-type {
+        border-bottom: none;
+    }
 `;
 
 export const Infor = styled.div`

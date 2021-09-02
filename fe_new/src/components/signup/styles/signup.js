@@ -38,26 +38,9 @@ export const Input = styled.input`
     box-sizing: border-box;
 `;
 
-export const Text = styled.a`
-    text-align: left;
-    padding-top: 10px;
-    color: #004999;
-    text-decoration: none;
-
-    :last-of-type{
-        text-align: right;
-    }
-
-    :hover{
-        color: #d9000b;
-    }
-`;
-
 export const BtnFrame = styled.div`
     display: flex;
     height: 30px;
-    padding: 0 200px;
-    justify-content: space-between;
 `;
 
 export const Btn = styled.button`
@@ -71,7 +54,7 @@ export const Btn = styled.button`
     border: 0;
     text-decoration: none;
     margin: auto;
-
+    
     &:hover {
         background-color: #ff2e38;
     }

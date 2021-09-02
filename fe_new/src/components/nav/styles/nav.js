@@ -25,11 +25,10 @@ export const Logo = styled.img`
 
 export const ButtonLink = styled(ReacRouterLink)`
     margin: 0 10px;
-    display: block;
     Background-color: #d9000b;
+    color: white;
     width: fit-content;
     height: fit-content;
-    color: white;
     border: 0;
     font-size: 16px;
     font-weight: bold;

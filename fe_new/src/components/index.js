@@ -5,3 +5,4 @@ export { default as Footer } from './footer';
 export { default as Blogs } from './blogs';
 export { default as Books } from './books';
 export { default as Signin } from './signin';
+export { default as Signup } from './signup';
