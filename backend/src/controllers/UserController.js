@@ -13,6 +13,18 @@ class UserController {
         user.fullName = data.fullName;
         user.avatar = request.file.path;
 
+        db.userModel.findOne({ username: data.username }, (err, user) => {
+            if (user) {
+                response.status(404).send({ message: "username đã tồn tại" });
+            }
+        });
+
+        db.userModel.findOne({ email: data.email }, (err, user) => {
+            if (user) {
+                response.status(404).send({ message: "email đã tồn tại" });
+            }
+        });
+
         await user.save((err) => {
             if (err) {
                 response.status(500).send({ message: err });
@@ -38,14 +50,14 @@ class UserController {
                         username: user.username,
                         email: user.email,
                     };
-                    const accessToken = await jwt.sign(
+                    const accessToken = jwt.sign(
                         { data: userData },
                         process.env.ACCESS_TOKEN_SECRET,
                         { expiresIn: process.env.ACCESS_TOKEN_LIFE }
                     );
 
                     // tạo refresh token
-                    const refreshToken = await jwt.sign(
+                    const refreshToken = jwt.sign(
                         { data: userData },
                         process.env.REFRESH_TOKEN_SECRET,
                         { expiresIn: process.env.REFRESH_TOKEN_LIFE }
@@ -65,12 +77,13 @@ class UserController {
         });
     }
 
+    // post /refresh-token
     refreshToken(request, response) {
         const refreshTokenFromClient = request.body.refreshToken;
 
         db.userModel.findOne(
             { refreshToken: refreshTokenFromClient },
-            async (err, user) => {
+            (err, user) => {
                 if (err || user == null) {
                     response.status(403).json({
                         message: "Invalid refresh token.",
@@ -83,7 +96,7 @@ class UserController {
                         );
                         const userData = decoded.data;
 
-                        const accessToken = await jwt.sign(
+                        const accessToken = jwt.sign(
                             { data: userData },
                             process.env.ACCESS_TOKEN_SECRET,
                             { expiresIn: process.env.ACCESS_TOKEN_LIFE }
@@ -97,6 +110,19 @@ class UserController {
                 }
             }
         );
+    }
+
+    getAllUser(request, response) {
+        const user = request.jwtDecoded.data;
+        db.userModel.findOne({ username: user.username }, (err, data) => {
+            if (data.isAdmin) {
+                db.userModel.find({}, (err, users) => {
+                    response.status(200).json(users);
+                });
+            } else {
+                response.status(404).send({ message: "k phải admin" });
+            }
+        });
     }
 
     test(request, response) {

@@ -7,5 +7,6 @@ router.post("/sign-up", userController.sign_up);
 router.post("/refresh-token", userController.refreshToken);
 router.use(authMiddleWare.isAuth);
 router.get("/test", userController.test);
+router.get("/get-all-user", userController.getAllUser);
 
 module.exports = router;
