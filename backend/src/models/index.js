@@ -1,7 +1,9 @@
-const userModel = require("./UserModel");
+const User = require("./User");
+const Book = require("./Book");
 
-db = {};
+const db = {};
 
-db.userModel = userModel;
+db.User = User;
+db.Book = Book;
 
 module.exports = db;

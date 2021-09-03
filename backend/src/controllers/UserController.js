@@ -1,11 +1,12 @@
 const db = require("../models");
 const jwt = require("jsonwebtoken");
+const fs = require("fs");
 
 class UserController {
     // post /sign-up
     async sign_up(request, response) {
         const data = request.body;
-        const user = db.userModel();
+        const user = db.User();
         user.username = data.username;
         user.password = user.encryptPassword(data.password);
         user.isUser = true;
@@ -13,13 +14,13 @@ class UserController {
         user.fullName = data.fullName;
         user.avatar = request.file.path;
 
-        db.userModel.findOne({ username: data.username }, (err, user) => {
+        db.User.findOne({ username: data.username }, (err, user) => {
             if (user) {
                 response.status(404).send({ message: "username đã tồn tại" });
             }
         });
 
-        db.userModel.findOne({ email: data.email }, (err, user) => {
+        db.User.findOne({ email: data.email }, (err, user) => {
             if (user) {
                 response.status(404).send({ message: "email đã tồn tại" });
             }
@@ -37,7 +38,7 @@ class UserController {
     // post /sign-in
     sign_in(request, response) {
         const data = request.body;
-        db.userModel.findOne({ username: data.username }, async (err, user) => {
+        db.User.findOne({ username: data.username }, async (err, user) => {
             if (err || user == null) {
                 response
                     .status(404)
@@ -49,6 +50,9 @@ class UserController {
                         _id: user._id,
                         username: user.username,
                         email: user.email,
+                        isAdmin: user.isAdmin,
+                        isUser: user.isUser,
+                        isStaff: user.isStaff,
                     };
                     const accessToken = jwt.sign(
                         { data: userData },
@@ -62,9 +66,7 @@ class UserController {
                         process.env.REFRESH_TOKEN_SECRET,
                         { expiresIn: process.env.REFRESH_TOKEN_LIFE }
                     );
-                    user.refreshToken = refreshToken;
-                    user.updateOne({ refreshToken: refreshToken });
-                    await user.save();
+                    await user.updateOne({ refreshToken: refreshToken });
                     response
                         .status(200)
                         .json({ user, accessToken, refreshToken });
@@ -78,10 +80,10 @@ class UserController {
     }
 
     // post /refresh-token
-    refreshToken(request, response) {
+    async refreshToken(request, response) {
         const refreshTokenFromClient = request.body.refreshToken;
 
-        db.userModel.findOne(
+        await db.User.findOne(
             { refreshToken: refreshTokenFromClient },
             (err, user) => {
                 if (err || user == null) {
@@ -114,9 +116,9 @@ class UserController {
 
     getAllUser(request, response) {
         const user = request.jwtDecoded.data;
-        db.userModel.findOne({ username: user.username }, (err, data) => {
+        db.User.findOne({ username: user.username }, (err, data) => {
             if (data.isAdmin) {
-                db.userModel.find({}, (err, users) => {
+                db.User.find({}, (err, users) => {
                     response.status(200).json(users);
                 });
             } else {
@@ -125,8 +127,52 @@ class UserController {
         });
     }
 
-    test(request, response) {
-        response.status(200).send({ message: 123 });
+    update(request, response) {
+        const data = request.jwtDecoded.data;
+        db.User.findOne({ username: data.username }, async (err, user) => {
+            const newData = request.body;
+
+            if (!newData.email) {
+                newData.email = user.email;
+            }
+            if (!newData.fullName) {
+                newData.email = user.fullName;
+            }
+            await user.updateOne({
+                email: newData.email,
+                fullName: newData.fullName,
+            });
+            if (request.file) {
+                try {
+                    fs.unlinkSync(user.avatar);
+                } catch (error) {
+                    console.log(error);
+                }
+                await user.updateOne({
+                    avatar: request.file.path,
+                });
+            }
+        });
+        response.status(200).send({ message: "oke" });
+    }
+
+    changePassword(request, response) {
+        const data = request.jwtDecoded.data;
+        const oldPassword = request.body.oldPassword;
+        const newPassword = request.body.newPassword;
+
+        db.User.findOne({ username: data.username }, async (err, user) => {
+            if (user.validPassword(oldPassword)) {
+                await user.updateOne({
+                    password: user.encryptPassword(newPassword),
+                });
+                response
+                    .status(200)
+                    .send({ message: "đổi mật khẩu thành công" });
+            } else {
+                response.status(403).send({ message: "mật khẩu không đúng" });
+            }
+        });
     }
 }
 
