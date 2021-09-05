@@ -171,7 +171,7 @@ class UserController {
                     .status(200)
                     .send({ message: "đổi mật khẩu thành công" });
             } else {
-                response.status(403).send({ message: "mật khẩu không đúng" });
+                response.status(404).send({ message: "mật khẩu không đúng" });
             }
         });
     }

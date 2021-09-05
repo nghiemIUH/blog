@@ -29,7 +29,7 @@ class BookController {
     getAllBookUser(request, response) {
         db.Book.find({ deleted: false }, (err, books) => {
             if (err) {
-                response.status(404).send({ message: err });
+                response.status(404).send({ message: "error" });
             } else {
                 response.status(200).json(books);
             }
@@ -37,13 +37,17 @@ class BookController {
     }
 
     getAllBookAdmin(request, response) {
-        db.Book.find({}, (err, books) => {
-            if (err) {
-                response.status(404).send({ message: err });
-            } else {
-                response.status(200).json(books);
-            }
-        });
+        if (request.jwtDecoded.data.isAdmin) {
+            db.Book.find({}, (err, books) => {
+                if (err) {
+                    response.status(404).send({ message: "error" });
+                } else {
+                    response.status(200).json(books);
+                }
+            });
+        } else {
+            response.status(404).send({ message: "permission denied" });
+        }
     }
 
     getBookById(request, response) {
@@ -51,7 +55,7 @@ class BookController {
 
         db.Book.findById(id, (err, book) => {
             if (err) {
-                response.status(404).send({ message: err });
+                response.status(404).send({ message: "error" });
             } else {
                 response.status(200).json(book);
             }

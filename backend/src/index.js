@@ -2,9 +2,9 @@ const express = require("express");
 require("dotenv").config();
 const morgan = require("morgan");
 const route = require("./routes");
-const db = require("./config/db/connect");
-
-db.connect();
+require("./config/db/connect").connect();
+const docs = require("./docs");
+const swaggerUI = require("swagger-ui-express");
 
 const app = express();
 app.use(morgan("dev"));
@@ -13,6 +13,11 @@ app.use("/uploads", express.static("uploads"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const options = {
+    customCss: ".swagger-ui .topbar { display: none }",
+};
+
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(docs, options));
 route(app);
 
 app.listen(5000);
