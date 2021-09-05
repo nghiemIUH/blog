@@ -67,6 +67,7 @@ class UserController {
                         { expiresIn: process.env.REFRESH_TOKEN_LIFE }
                     );
                     await user.updateOne({ refreshToken: refreshToken });
+                    user.save();
                     response
                         .status(200)
                         .json({ user, accessToken, refreshToken });
@@ -80,15 +81,15 @@ class UserController {
     }
 
     // post /refresh-token
-    async refreshToken(request, response) {
-        const refreshTokenFromClient = request.body.refreshToken;
-
-        await db.User.findOne(
+    refreshToken(request, response) {
+        const refreshTokenFromClient = request.headers["x-access-token"];
+        db.User.findOne(
             { refreshToken: refreshTokenFromClient },
             (err, user) => {
                 if (err || user == null) {
                     response.status(403).json({
                         message: "Invalid refresh token.",
+                        err: err,
                     });
                 } else {
                     try {
