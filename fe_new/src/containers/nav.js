@@ -7,6 +7,7 @@ export function NavContainer() {
         <Nav>
             <Nav.Logo to={ROUTES.HOME} alt='AI Lab' src={logo} />
             <Nav.Menu>
+                <Nav.ButtonLink to={ROUTES.HOME}>Home</Nav.ButtonLink>
                 <Nav.ButtonLink to={ROUTES.BLOGS}>Blogs</Nav.ButtonLink>
                 <Nav.ButtonLink to={ROUTES.BOOKS}>Books</Nav.ButtonLink>
                 <Nav.ButtonLink to={ROUTES.SIGN_IN}>Sign In</Nav.ButtonLink>

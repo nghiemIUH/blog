@@ -1,4 +1,4 @@
-import { Container, Title, Form, TextArea, Input, BtnFrame, Btn } from "./styles/signup";
+import { Container, Title, Form, TextArea, Input, Text, BtnFrame, Btn } from "./styles/signup";
 
 export default function Signup({ children, ...resProps }) {
     return <Container {...resProps}>{children}</Container>
@@ -18,6 +18,10 @@ Signup.TextArea = function SignupTextArea({ children, ...resProps }) {
 
 Signup.Input = function SignupInput({ ...resProps }) {
     return <Input {...resProps} />
+}
+
+Signup.Text = function SignupText({ children, ...resProps }) {
+    return <Text {...resProps}>{children}</Text>
 }
 
 Signup.BtnFrame = function SignupBtnFrame({ children, ...resProps }) {

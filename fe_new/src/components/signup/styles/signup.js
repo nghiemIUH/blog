@@ -38,6 +38,16 @@ export const Input = styled.input`
     box-sizing: border-box;
 `;
 
+export const Text = styled.a`
+    padding-top: 10px;
+    color: #004999;
+    text-decoration: none;
+
+    :hover{
+        color: #d9000b;
+    }
+`;
+
 export const BtnFrame = styled.div`
     display: flex;
     height: 30px;

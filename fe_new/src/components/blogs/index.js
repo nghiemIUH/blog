@@ -1,6 +1,14 @@
-import { Container, Frame, SideBar, Items, Infor, A, UseAva, UseName, Title, Date, TextUpppercase } from "./styles/blogs"
+import { Body, PageName, Container, Frame, SideBar, Items, Infor, A, UseAva, UseName, Title, Date, TextUpppercase } from "./styles/blogs"
 
 export default function Blogs({ children, ...resProps }) {
+    return <Body {...resProps}>{children}</Body>
+}
+
+Blogs.PageName = function BlogsPageName({ children, ...resProps }) {
+    return <PageName {...resProps}>{children}</PageName>
+}
+
+Blogs.Container = function BlogsContainer({ children, ...resProps }) {
     return <Container {...resProps}>{children}</Container>
 }
 

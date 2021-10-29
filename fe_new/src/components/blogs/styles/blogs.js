@@ -1,10 +1,25 @@
 import styled from "styled-components/macro";
 
-export const Container = styled.div`
-    display: flex;
-    padding-top: 150px;
+export const Body = styled.div`
+    padding-top: 120px;
     width: 70%;
     margin: auto;
+`;
+
+export const PageName = styled.div`
+    text-transform: uppercase!important;
+    color: #004999;
+    padding-bottom: 20px;
+    text-align: center;
+    color: #004999;
+    font-size: 30px;
+    font-weight: 600;
+    border-bottom: 1px solid #696969;
+`;
+
+export const Container = styled.div`
+    padding-top: 20px;
+    display: flex;
     justify-content: space-between;
 `;
 
