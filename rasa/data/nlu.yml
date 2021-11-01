@@ -1,0 +1,940 @@
+version: "2.0"
+
+nlu:
+    - intent: chaohoi
+      examples: |
+          - xin chào
+          - mình có vài câu hỏi
+          - có ai giúp mình không
+          - bạn ơi
+          - anh ơi
+          - chị ơi
+          - có ai ở đây không
+          - cho em hỏi
+          - admin ơi
+          - em có vài câu hỏi
+          - xin chào
+          - mình có vài câu hỏi
+          - có ai giúp mình không
+          - bạn ơi
+          - anh ơi
+          - chị ơi
+          - có ai ở đây không
+          - cho em hỏi
+          - admin ơi
+          - em có vài câu hỏi
+          - xin chao
+          - xin cháo
+          - chào bạn
+          - chào
+          - chào m
+          - hello bot
+          - xin chao bot
+          - xin chào bot
+          - chào bot
+          - chao bot
+          - xin chào bạn bot
+          - xin chao ban bot
+          - hi hello
+          - hi hi
+    - intent: bye
+      examples: |
+          - tạm biệt
+          - chào tạm biệt
+          - tạm biệt em nhé
+          - tạm biệt bạn nhé
+    - intent: thank
+      examples: |
+          - cảm ơn
+          - cảm ơn bạn
+          - cảm ơn em
+          - thanks
+          - thank you
+          - tuyệt cú mèo
+          - siêu hay
+          - oke
+          - dạ em cảm ơn ạ
+          - dạ vâng
+    - intent: cuocthi
+      examples: |
+          - nghe nói năm nào khoa cũng có tổ chức các cuộc thi phải không
+          - khoa có tổ chức các cuộc thi gì không
+          - các cuộc thi đó trong khoa như thế nào
+          - các cuộc thi đó có thực tế hay không
+          - trong khoa tổ chức các cuộc thi nó có thú vị hay không
+          - khoa có thường tổ chức các cuộc thi hay không
+    - intent: hocbong
+      examples: |
+          - học bổng theo từng học kì được xét như thế nào
+          - số lượng học bổng ra sao
+          - học bổng nhận được là bao nhiêu
+          - học cntt có dễ nhận học bổng không
+          - điều kiện để nhận học bổng là gì
+          - học bổng có dễ kiếm không
+          - chính sách học bổng của trường
+          - để đạt học bổng 100% thì cần bao nhiêu điểm
+          - có bao nhiêu loại học bổng ở trường
+          - học bổng lãnh theo kì hay năm
+          - điểm rèn luyện là bào nhiêu để được xét học bổng
+          - sinh viên cntt lãnh học bổng nhiều không
+          - khi chọn ngành khoa học dữ liệu thì có dễ kiếm học bổng không
+          - học ngành khoa học dữ liệu thì có dễ kiếm học bổng không
+          - học ngành khoa học dữ liệu thì có khó đạt được học bổng không
+          - dễ kiếm học bổng khi chọn ngành khoa học dữ liệu hay không
+          - mấy bạn em nói khó kiếm học bổng khi học ngành khoa học dữ liệu
+          - nghe mấy anh chị nói ngành này khó kiếm học bổng lắm
+          - em chọn ngành khoa học dữ liệu thì có dễ đạt được học bổng hay không
+          - có khó đạt được học bổng hay không khi em chọn ngành khoa học dữ liệu
+          - sinh viên ngành khoa học dữ liệu có dễ đạt được học bổng không
+    - intent: caulacbo
+      examples: |
+          - khoa công nghệ thông tin có những câu lạc bộ học thuật nào ạ
+          - khoa có câu lạc lạc bộ học thuật hay chuyên môn gì đó không
+          - tư vấn về câu lạc bộ của khoa
+          - câu lạc bộ lập ra để làm gì
+          - có câu lạc bộ gì liên quan đến cntt không
+          - cho xin ít thông tin về các câu lạc bộ của khoa
+          - khoa có bao nhiêu câu lạc bộ
+          - câu lạc bộ nào trong khoa là lớn nhất
+          - giới thiệu về câu lạc bộ lập trình đi
+          - câu lạc bộ lập trình hoạt động như thế nào
+          - thành viên của clb lập trình đòi hỏi ra sao
+          - có câu lạc bộ nào để rèn luyện tư duy lập trình không
+          - nghe nói lập trình khó lắm vậy có clb nào để học không
+          - mình cũng thích lập trình lắm vậy có câu lạc bộ nào để tham gia không
+          - review cho mình về câu lạc bộ lập trình được không
+          - cho xin thông tin về câu lạc bộ lập trình
+          - có cần điều kiện gì để vào câu lạc bộ lập trình không
+          - mình học lập trình không giỏi thì có được vào không
+          - giới thiệu về câu lạc bộ an toàn thông tin đi
+          - câu lạc bộ an toàn thông tin hoạt động như thế nào
+          - thành viên của clb an toàn thông tin đòi hỏi ra sao
+          - mình thích làm hacker lắm vậy có câu lạc bộ nào cho mình rèn luyện không
+          - câu lạc bộ antt có gì thú vị không
+          - học gì trong câu lạc bộ antt
+          - câu lạc bộ antt giúp sinh viên đạt được những gì
+          - muốn như anh hiếu pc thì tham gia vào câu lạc bộ nào
+    - intent: tach_nganh
+      examples: |
+          - em chưa chọn được chuyên ngành tư vấn cho em
+          - em muốn hỏi về các chuyên ngành để phục vụ cho việc chọn chuyên ngành
+          - sắp tới có chia chuyên ngành  em muốn hỏi về các chuyên nghành của khoa mình
+          - em sắp chia chuyên ngành rồi mà không biết phải chọn ngành gì tư vấn giúp em với
+          - sắp chia chuyên ngành rồi mà hoang mang quá
+          - chia chuyên ngành như thế nào vậy
+    - intent: insult
+      examples: |
+          - bot ngu
+          - bot ngáo
+          - bot khùng
+          - bot điên
+          - m có bị điên không
+          - m có bị khùng không
+          - ngáo à bot
+          - bot ngu như bò
+          - bot m là đồ điên
+    - intent: tuvankhac
+      examples: |
+          - còn ngành nào khác không
+          - tư vấn cho mình ngành khác đi
+          - còn ngành nào nữa không
+          - ngoài ngành này ra thì còn ngành nào nữa không
+          - còn ngành nào hay hơn không
+          - ngoài ngành này ra còn ngành nào khác không
+    - intent: dinhhuongsai
+      examples: |
+          - nếu em chọn sai ngành khoa học máy tính thì có nên tiếp tục hay không
+          - em chọn học công nghệ thông tin mà giờ không theo nổi thì có nên đổi chuyên ngành hay không
+          - cho em hỏi làm thế nào để biết mình định hướng sai khi chọn ngành hệ thống thông tin
+          - ngành khoa học dữ liệu định hướng sai thì gây ra hậu quả như thế nào và có quá nghiêm trọng không
+          - cho em hỏi làm thế nào để biết mình chọn sai ngành khoa học máy tính
+          - lỡ mình chọn ngành khoa học máy tính xong nhưng sau đó thấy không hợp thì phải làm sao
+          - mình có thể đổi ngành khác khi chọn học ngành khoa học dữ liệu mà không thấy phù hợp được không
+          - dấu hiệu chứng tỏ mình học sai ngành khi học ngành hệ thống thông tin
+          - khi học ngành khoa học dữ liệu không còn phù hợp thì mình có thể chuyển ngành được không
+          - lỡ theo học ngành khoa học dữ liệu mà tiếp thu không nổi thì có chuyền ngành được không
+          - mình chọn khoa học dữ liệu nếu không phù hợp thì có thể chuyển ngành khác không
+          - có thể chuyển ngành khi mình không phù hợp khi chọn khoa học dữ liệu
+          - cho mình hỏi chọn ngành kỹ thuật phần mềm không phù hợp thị có thể chuyển sang chuyên ngành khác hay không
+          - cho hỏi là có thể xin chuyển từ kỹ thuật phần mềm sang chuyên ngành khoa học máy tính hay không
+          - cho tui hỏi mình chọn kỹ thuật phần mềm thấy sai thì có thể chuyển sang chuyên ngành khác hay không
+          - cho mình hỏi năm 2 muồn chuyển từ kỹ thuật phần mềm sang chuyên ngành khác được không
+          - giờ tao muồn chuyển từ kỹ thuật phần mềm sang chuyên ngành khác được không
+          - cho mình hỏi chọn ngành kỹ thuật phần mềm thì sau này muốn đổi ngành khác thì sau
+          - cho mình hỏi là mình muốn đổi sang ngành khác khi mình đang học kỹ thuật phần mềm được không
+          - cho tui hỏi là tui đang học năm 2 rồi giờ muốn chuyển chuyên ngành từ kỹ thuật phần mềm sang ngành khác được không
+          - em đang học ngành kỹ thuật phần mềm bây giờ muốn chuyển sang chuyên ngành khác được không
+          - bây giờ em muốn chọn ngành kỹ thuật phần mềm thì sau này có chuyển ngành khác được không
+          - em đang là sinh viên năm 2 em muốn chuyển sang chuyên ngành khác được không
+          - em đang là sinh viên năm 2 ngành kỹ thuật phần mềm nhưng em không thể học nổi thì chuyển ngành được không
+          - theo ngành kỹ thuật phần mềm thì chuyển ngành được không
+          - chọn sai ngành kỹ thuật phần mềm thì chuyển ngành được không
+          - theo ngành khoa học máy tính không nổi thì có thể chuyển sang ngành khác được không
+          - nếu chọn ngành công nghệ thông tin không phù hợp thì mình có thể chọn ngành khác không
+          - theo ngành hệ thống thông tin không ổn thì mình có thể chuyển ngành không
+          - mình không biết khi chọn ngành khoa học máy tính rồi thì có thể đổi sang ngành khác không
+          - khi thấy không phù hợp khi chọn ngành hệ thống thông tin thì có thể đổi sang ngành khác không
+          - mình thích ngành công nghệ thông tin mà lỡ chọn mà không phù hợp thì có thể chuyển sang ngành khác được không
+          - có thể chuyển sang ngành khác nếu thấy không phù hợp không
+    - intent: ungdung
+      examples: |
+          - có thể cho em biết khoa học dữ liệu và ứng dụng của nó được không
+          - ứng dụng lớn nhất của hệ thống thông tin là gì ạ
+          - ngành khoa học máy tính ứng dụng rộng không
+          - ứng dụng nào phổ biến nhất của ngành công nghệ thông tin
+          - có phải ngành công nghệ thông tin hiện tại ứng dụng nhiều trong app phải không
+          - cho mình hỏi về ứng dụng của ngành khoa học dữ liệu
+          - có thể kể cho mình vài ứng dụng sử dụng khoa học máy tính không
+          - cho em hỏi ngành khoa học dữ liệu có thể làm các ứng dụng trên điện thoại không
+          - em cần biết khi học xong ngành khoa học dữ liệu thì có làm được những gì
+          - học khoa học dữ liệu thì có thể ứng dụng những gì trong đời sống
+          - sau khi hoàn thành chương trình khoa học dữ liệu của trường thì mình có thể ứng dụng vào những gì
+          - em cần biết học ngành khoa học dữ liệu thì có thể ứng dụng vào đâu
+          - ứng dụng trong đời sống ngành khoa học dữ liệu là gì
+          - ngành khoa học dữ liệu ứng dụng có phổ biến không
+          - ngành kĩ thuật phần mềm thường ứng dụng vào đâu
+          - ứng dụng của ngành khoa học máy tính là gì
+          - khi học công nghệ thông tin thì có thể ứng dụng vào đâu
+          - ứng dụng lớn nhất của ngành khoa học máy tính là gì vậy
+          - ứng dụng nào phổ biến nhất trong ngành công nghệ thông tin
+          - cho hỏi ứng dụng của ngành kỹ thuật phần mềm phần đi
+          - mình có thể ứng dụng những gì học được từ ngành hệ thống thông tiếng anh
+          - mức độ ứng dụng của ngành khoa học máy tính có cao không
+          - học kỹ thuật phần mềm thì có thể ứng dụng vào đâu
+          - có thể ứng dụng khoa học máy tính vào những việc gì
+          - cho hỏi vài ứng dụng của ngành kỹ thuật phần mềm vào đời sống
+    - intent: linhvuc
+      examples: |
+          - muốn làm về lĩnh vực mạng máy tính nên bắt đầu như thế nào khi học công nghệ thông tin
+          - học khoa học máy tính thì có làm được hacker hay không
+          - muốn làm về lĩnh vực trí tuệ nhân tạo khi học khoa học máy tính có được không
+          - lĩnh vực về khoa học dữ liệu có nhiều không
+          - ký thuật phần mềm nghiên cứu những lĩnh vự nào
+          - lĩnh vực sinh viên hệ thống thông tin hay làm là gì
+          - có phải sinh viên khoa học dữ liệu ra trường là làm bên cào dử liệu phải không
+          - lĩnh vực nào thì phù hợp với sinh viên khoa học máy tính
+          - học kỹ thuật phần mềm thì nên làm trong lĩnh vực nào
+          - có phải học khoa học máy tính thì làm được nhiều lĩnh vực không
+          - sinh viên khoa học dữ liệu thì làm trong lĩnh vực công nghệ nào
+          - lĩnh vực nào phù hợp với sinh viên khoa học máy tính
+          - ngành công nghệ thông tin thì làm về lĩnh vực gì
+          - chuyên ngành hệ thông tin thường thì làm về lĩnh vực nào
+          - ngành kỹ thật phần mềm thường làm trong lĩnh vực nào vậy
+          - công nghệ thông tin thì làm việc trong lĩnh vực gì
+          - lĩnh vực nào sinh viên hệ thống thông tin thường làm vậy
+          - lĩnh vực nào phù hợp với sinh viên kỹ thuật phần mềm
+          - chuyên ngành khoa học máy tính hay làm việc trong lĩnh vực nào vậy
+          - lĩnh vực của ngành công nghệ thông tin có đa dạng không
+    - intent: giangvien
+      examples: |
+          - giảng viên của khoa học máy tính gồm bao nhiêu người
+          - trưởng bộ môn kỹ thuật phần mềm là ai
+          - công nghệ thông tin gồm có những giảng viên nào
+          - học vị cao nhất của giảng viên khoa học dữ liệu
+          - một giảng viên hệ thống thông tin thường dạy bao nhiêu môn
+          - giảng viên công nghệ thông tin thường làm nghiệp vụ gì những gì
+          - giảng viên có học vị gì cao nhất trong ngành khoa học máy tính
+          - giảng viên ngành hệ thống thông tin như  thế nào
+          - giảng viên khoa học dữ liệu có vui tính không
+          - giảng viên ngành khoa học dữ liệu có khó tính không
+          - nghe nói thầy cô dạy khoa học dữ liệu khó lắm có phải vậy không
+          - bạn em nói giảng viên khoa học dữ liệu ít khi nương tay khi chấm bài cho sinh viên phải không
+          - em thấy giảng viên ngành khoa học dữ liệu cũng vui tính hết sao mấy bạn nói khó vậy
+          - bạn em nói giảng viên khoa học dữ liệu ít khi nương tay khi chấm bài cho sinh viên phải không
+          - thầy cô giảng dạy ở chuyên ngành công nghệ thông tin có dễ không ạ
+          - giảng viên của ngành kỹ thuật phần mềm bao gồm những ai
+          - giảng viên khoa học máy tính dạy có dễ hiểu không
+          - giảng viên ngành hệ thống thông tin là người như thế nào
+          - giảng viên có dễ không vậy
+          - giảng viên có khó tính không
+          - giảng viên ngành này có hay cho điểm cao không
+    - intent: canhtranh
+      examples: |
+          - ngành khoa học máy tính có sự cạnh tranh cao không
+          - sự cạnh tranh trong ngành kỹ thuật phần mềm
+          - công nghệ thông tin có cạnh tranh cao không
+          - dân khoa học dữ liệu làm thế nào để cạnh tranh được với những ngành khác
+          - cạnh tranh là gì ngành hệ thống thông tin có cần sự cạnh tranh với những ngành khác
+          - tỉ lệ cạnh tranh ngành kỹ thuật phần mềm là bao nhiêu
+          - nghe nói học khoa học máy tính cạnh tranh lắm phải không
+          - có phải cạnh tranh trong ngành công nghệ thông tin cao lắm phải không
+          - người nào cạnh tranh không nổi trong ngành hệ thống thông tin dễ dẫn đến nghỉ học phải không
+          - cho hỏi về cạnh tranh trong ngành khoa học dữ liệu
+          - ngành khoa học dữ liệu cạnh tranh như thế nào
+          - ngàng khoa học dữ liệu khó học chắc ít cạnh tranh lắm hả
+          - thầy cô cho em hỏi sinh viên ngành này cạnh tranh lắm không
+          - nghe nói ngành khoa học dữ liệu nhiều bạn giỏi theo học lắm chắc cạnh tranh nhiều cao lắm hả
+          - bạn em nói sẽ phải cạnh tranh cao nếu theo ngành khoa học dữ liệu
+          - ngành khoa học dữ liệu thì cạnh tranh như thế nào cao hay thấp
+          - cạnh tranh của ngành khoa học máy tính như thế nào
+          - mức độ cạnh tranh của ngành kỹ thuật phần mềm có cao không
+          - có cạnh tranh nổi khi chọn ngành hệ thông thông tin
+          - nghe nói ngành kỹ thuật phần mềm cạnh tranh cao lắm phải không
+    - intent: tailieu
+      examples: |
+          - nguồn tài liệu nào phù hợp cho sinh viên vậy
+          - tài liệu học tập thì có thể tìm ở đâu vậy
+          - có thể chỉ cho mình những nguồn tài liệu hay cho chuyên ngành
+          - học khoa học dữ liệu thì cần tìm tài liệu nào
+          - học kỹ thuật phần mềm thì cần đọc sách gì
+          - học khoa học máy tính nên kiếm tài liệu ở đâu
+          - muốn học tốt công nghệ thông tin thì nên đọc sách gì
+          - các trang web phục vụ việc tra cứu tài liệu hệ thống thông tin
+          - cho em hỏi tài liệu khoa học dữ liệu có hệ thống tìm ở đâu
+          - khoa học máy tính có cần nhiều tài liệu không
+          - cho mình xin tên tài liệu ngành công nghệ thông tin đi
+          - kiếm tài liệu ngành hệ thống thông tin ở đâu vậy
+          - tài liệu ngành công nghệ thông tin thì mua ở đâu thì phù hợp
+          - em có thể tìm tài liệu ở đâu khi theo học ngành khoa học dữ liệu
+          - để có thể theo được ngành khoa học dữ liệu thì mình có thể tìm hiểu thêm ở đâu vậy
+          - những nguồn tài liệu phù hợp với sinh viên khoa học dữ liệu
+          - tài liêu cho ngành khoa học máy tính có thể kiếm ở đâu
+          - sinh viên ngành công nghệ thông tin có thể kiếm thêm tài liệu ở đâu
+          - cho em hỏi tài liệu của kỹ thuật phần mềm mình đọc ở đâu là ổn vậy
+          - ngành hệ hệ thống thông tin thì có thể tham khỏa tài liệu ở đâu
+    - intent: tuvan
+      examples: |
+          - tư vấn về khoa học máy tính đi
+          - cho hỏi về ngành kỹ thuật phần mềm
+          - khoa học dữ liệu là ngành như thế nào
+          - ngành hệ thống thông tin là gì
+          - tư vấn cho mình về ngành công nghệ thông tin
+          - ngành khoa học máy tính là gì
+          - cho hỏi thông tin về ngành hệ thống thông tin
+          - mình cần review tí về ngành kỹ thuật phần mềm
+          - có thể cho ít thông tin về ngành khoa học dữ liệu
+          - ngành công nghệ thông tin là gì mà sao hot quá vậy
+          - tư vần cho mình ngành nào hot nhất
+          - ngành nào đang được nhiều người chọn học vậy
+          - ngành nào đang được nhiều người chọn vậy
+          - cho xin ít thông tin về các chuyên ngành
+          - tư vấn cho mình ngành khoa học dữ liệu đi
+          - cho mình hỏi ngành khoa học dữ liệu là gì
+          - thông tin về ngành khoa học dữ liệu
+          - thầy cô em cần tư vấn về ngành khoa học dữ liệu
+          - ngành khoa học dữ liệu là ngành như thế nào
+          - tất tần tật về ngành khoa học dữ liệu
+          - mình đang tách ngành cần tìm hiểu về ngành khoa học dữ liệu
+          - cho ít thông tin về ngành khoa học dữ liệu đi
+          - mình nghe nói trường mình mới có thêm chuyên ngành khoa học dữ liệu mình cần tư vấn về ngành đó
+          - thầy cô cho em hỏi ngành khoa học dữ liệu là gì ạ
+          - em đang tìm hiểu về ngành khoa học dữ liệu cần thầy cô tư vấn cho em
+          - em hoang mang không biết chọn ngành nào thầy cô có thể tư vấn cho em về ngành khoa học dữ liệu được không ạ
+          - mấy bạn em nói ngành khoa học dữ liệu này hay nên em cần tư vấn về ngành này ạ
+          - khoa học dữ liệu đi
+          - mình cần tư vấn về ngành khoa học dữ liệu
+          - em vẫn chưa hiểu về ngành khoa học dữ liệu cần tư vấn thêm
+          - mấy nay em tìm hiểu thử ngành khoa học dữ liệu nhưng vần chưa hiểu lắm em rất cần lời tư vấn từ thầy cô
+          - mọi người ơi cho em ít thông tin về ngành khoa học dữ liệu đi
+          - em sắp tách ngành rồi mà chưa biết đăng kí vào ngành nào cần tư vấn về ngành khoa học dữ liệu
+          - sắp tách ngành rồi mà em cần tư vấn về ngành khoa học dữ liệu
+          - mấy bạn kêu em học ngành khoa học dữ liệu mà em chưa biết hết gì về nó cần thầy cô tư vấn giúp em
+          - thầy cô có thể tư vấn cho em về ngành khoa học dữ liệu của trường không ạ
+          - em nghe nói khoa học dữ liệu đang hot mà không biết nó là gì nữa cần sự tư vấn
+          - ngành khoa học máy tính là ngành gì vậy mà sao nhiều người theo học quá
+          - khoa học dữ liệu là gì thế mà sao nó hot quá vậy
+          - mình cân thông tin về ngành khoa học dữ liệu cần người tư vấn
+          - thời hạn đăng ký chuyên ngành sắp hết rồi mà mình chưa chọn được ngành nên mình muốn hỏi về ngành khoa học dữ liệu
+          - khoa học dữ liệu là gì vậy
+          - thông tin ngành khoa học máy tính
+          - giới thiệu sơ về khoa học máy tính đi ạ
+          - hệ thống thông tin là ngành gì vậy
+          - ngành hệ thống thông tin quản lý là gì
+          - ngành công nghệ thông tin là gì
+    - intent: monhoc
+      examples: |
+          - ngành này học những môn gì
+          - những môn quan trọng khi cho ngành này
+          - mình cần tập trung những môn nào nếu chọn chuyên ngành này
+          - ngành này thì môn học nào quan trọng vậy
+          - kỹ thuật phần mềm học cái gì
+          - những môn học nền tảng của ngành này là gì
+          - học cái gì trong ngành công nghệ thông tin
+          - khoa học dữ liệu dạy cái gì
+          - hệ thống thông tin học như thế nào
+          - học khoa học máy tính cần chú trọng vào những môn nào
+          - học kỹ thuật phần mềm có nhiều môn khó không
+          - môn học trọng tâm trong hệ thống thông tin là gì
+          - học hệ thống thông tin  có nhiều môn khó không
+          - môn học nào khó nhất trong ngành khoa học dữ liệu
+          - những môn học nào là nền tảng trong ngành khoa học máy tính
+          - khoa học dữ liệu là mình học cái gì vậy
+          - thầy cô dạy những gì về ngành khoa học dữ liệu
+          - ngành khoa học dữ là ngành mới ở trường nhưng không biết là học cái gì trong ngành này nữa
+          - thầy cô dạy những gì trong ngành khoa học dữ liệu
+          - em sẽ được học những gì trong ngành khoa học dữ liệu này
+          - trường trang bị những kiến thức gì cho sinh viên trong ngành khoa học dữ liệu
+          - em cần biết những kiến thức nhà trường dạy cho sinh viên trong ngành khoa học dữ liệu
+          - kiến thức thầy cô dạy cho sinh viên trong ngành khoa học dữ liệu bao gồm những gì
+          - học cái gì trong ngành khoa học dữ liệu
+          - thầy cô có thể cho em biết là mình học những gì khi chọn ngành khoa học dữ liệu
+          - những môn học nền tảng nhất của ngành khoa học dữ liệu là gì vậy
+          - môn học nào của ngành khoa học dữ liệu là cần thiết gì vậy
+          - đang học khoa học máy tính nhưng không biết sau này làm gì
+          - khoa học máy tính học những gì
+          - sinh viên ngàng khoa học máy tính nên tìm hiểu thêm những gì
+          - đang học khoa học máy tính nhưng không biết cần học những gì
+          - nên học những gì khi chọn ngành khoa học máy tính
+          - những môn nào quan trọng với khoa học máy tính
+          - là sinh viên khoa học máy tính cần học tốt những môn nào
+          - sinh viên khoa học máy tính cần chú ý học những môn nào
+          - những môn học cơ bản của ngành khoa học máy tính
+          - trường mình đào tạo những môn nào cho ngành khoa học máy tính
+          - ngành khoa học máy tính nên học những gì và có nên thực tập hay làm dự án không
+    - intent: luong
+      examples: |
+          - mức lương của ngành này cao không
+          - lương của ngành này có đủ sống không
+          - sinh viên ngành này ra trường lương bao nhiêu thì phù hợp
+          - mức lương phù hợp cho sinh viên vừa ra trường khi học ngành này
+          - ngành này lương có đủ sống không
+          - mức lương của ngành kỹ thuật phần mềm khi ra trường là bao nhiêu
+          - mức lương của ngành công nghệ thông tin
+          - học khoa học dữ liệu lương là bao nhiêu
+          - cơ hội việc làm như thế nào của khoa học dữ liệu
+          - công nghệ thông tin ra trường việc làm có ổn định không
+          - việc làm như thế nào khi học xong hệ thống thông tin
+          - công việc thường có của ngành công nghệ thông tin
+          - nếu học ở mức trung bình thì mức lương khi ra trường của ngành công nghệ thông tin là bao nhiêu
+          - học hệ thống thông tin ra trường có dễ kiếm việc làm không
+          - học khoa học máy tính ra dễ kiếm việc làm không
+          - dễ kiếm việc khi học ngành kỹ thuật phần mềm không
+          - nghe nói học công nghệ thông tin là có việc làm ngay phải không
+          - có phải dể kiếm việc làm trong ngành hệ thống thông tin phải không
+          - công việc sau khi tốt nghiệp ngành khoa học máy tính
+          - lương ngành khoa học dữ liệu có cáo không
+          - mức lương khởi điểm của ngành khoa học dữ liệu là bao nhiêu
+          - tốt nghiệp loại giỏi thì đi làm lương bao nhiêu vậy
+          - sinh viên vừa ra trường thì có lương bao nhiêu trong ngành khoa học dữ liệu
+          - đi làm bao trong ngành khoa học dữ liệu thì lương mới có dư vậy
+          - không biêt sao này đi làm bên khoa học dữ liệu thì lương có cao không nữa
+          - bao lâu thì mình mới đạt được lương ngàn đô trong ngành khoa học dữ liệu vậy
+          - bạn em chê ngành này lương bèo lắm có phải vậy không
+          - sinh viên theo khoa học dữ liệu thì có tương lai lương như thế nào
+          - học lực khá thì có thể được lương cao trong ngành khoa học dữ liệu không
+          - bao lâu thì sinh viên làm ngành khoa học dữ liệu có lương ngàn đô không
+          - thầy cô ơi cho em hỏi ngành khoa học dữ liệu lương cao không vậy
+          - nghe nói ngành khoa học dữ liệu lương cao lắm phải không
+          - bạn mình nói làm ngành khoa học dữ liệu lương cao lắm
+          - làm ngành khoa học dữ liệu chắc lương cao lắm hả
+          - lương ngành khoa học dữ liệu là tiền đô hay tiền việt vậy
+          - thầy cô nói ngành khoa học dữ liệu đi làm lương cũng cao có phải vậy không
+          - khoa học dữ liệu là ngành mới trường mình liệu khi đi làm lương có cao không
+          - khi làm lâu năm trong ngành khoa học dữ liệu là bao nhiêu
+          - mới ra trường làm ngành khoa học dữ liệu lương đủ sống không
+          - làm trong lĩnh vực khoa học dữ liệu có phải lương cao lắm không
+          - mức lương phù hợp cho người mới đi làm trong ngành khoa học dữ liệu
+          - em lo lắng không biết lương ngành khoa học dữ liệu là bao nhiêu có đủ sống không
+          - bạn em nói ngành này lương cao lắm nè có đúng không vậy
+          - làm ngành khoa học dữ liệu có đủ tiền cưới vợ không
+          - lương bao nhiêu trong ngành khoa học dữ liệu là đủ mua nhà ở TPHCM
+          - có phải ngành khoa học dữ liệu lương cao lắm phải không nghe nói là vậy
+          - nghe đồn ngành này lương cao lắm nè có phải không vậy
+          - lương ngành khoa học dữ liệu như thế nào thấp hay cao vậy
+          - làm ngành khoa học dữ liệu có đủ sống trên đất sài gòn này
+          - lương ngành khoa học máy tính có cao không
+          - học khoa học máy tính ra trường lương cao không
+          - lương của chuyên gia khoa học máy tính
+          - lương của sinh viên sau khi tốt nghiệp ngành khoa học máy tính
+          - mỗi năm chuyên gia khoa học máy tính khiếm được bao nhiêu tiền
+          - cho em hỏi học ngành kỹ thuật phần mềm thì ra làm lương cao lắm phải không
+          - cho em hỏi mức lương trung bình của một lập trình viên
+          - mức lương trung bình của một lập trình viên là bao nhiêu
+          - ngành kỹ thuật đang là một ngành hot thì lương ngành này ra sao
+          - nghe nói ngành kỹ thuật lương nghìn đô có đúng không vậy
+          - ngành kỹ thuật phần mềm thì lương nó khoảng bao nhiêu
+          - học ngành kỹ thuật phần mềm thì lương nó ở mức nào
+          - cho em hỏi ngành kỹ thuật phần mềm mức lương có cao không
+          - mức lương của ngành kỹ thuật phần mềm khoảng bao nhiêu
+          - lương của ngành kỹ thuật phần mềm cao lắm đúng không
+          - nghe nói lương của ngành kỹ thuật phần mềm không hề thấp đúng không
+          - ngành kỹ thuật phần mềm mức lương ra sao
+          - ngành kỹ thuật phần mềm lương bổng ra sao
+          - mức lương ngành kỹ thuật phần mềm mức lương nó như thế nào
+          - kỹ thuật phần mềm là một ngành hot thì mức lương của nó có cao không
+          - lương của ngành kỹ thuật phần mềm có cao hơn các ngành khác không
+          - lương kỹ thuật phần mềm
+          - mức lương của ngành kỹ thuật phần mềm
+          - tư vấn về mức lương ngành kỹ thuật phần mềm
+          - cho tao hỏi về lương của ngành kỹ thuật phần mềm
+          - mức lương nghành hệ thống thông tin
+          - mức lương như thế nào là phù hợp đối với sinh viên mới ra trường của ngành công nghệ thông tin
+    - intent: ngonngu
+      examples: |
+          - ngành này ngôn ngữ nào quan trọng nhất
+          - ngôn ngữ nào hay dùng nhất trong ngành này
+          - học khoa học máy tính thì cần biết ngôn ngữ nào
+          - ngành này có thường dùng java để học không
+          - kỹ thuật phần mềm thì cần biết ngôn ngữ nào
+          - ngôn ngữ nào cần khi học công nghệ thông tin
+          - ngôn ngữ nào hot nhất khi học khoa học dữ liệu
+          - ngôn ngữ nào sẽ được dạy khi học hệ thống thông tin
+          - cần học trước ngôn ngữ gì khi chọn ngành khoa học máy tính
+          - có phải python đang rất hot trong ngành khoa học dữ liệu
+          - cần học ngôn ngữ gì khi học kỹ thuật phần mềm
+          - ngôn ngữ nào thì phù hợp cho ngành hệ thống thông tin
+          - code ngôn ngữ gì trong công nghệ thông tin
+          - ngôn ngữ lập trình nào cần học trong ngành khoa học dữ liệu
+          - để làm trong ngành khoa học dữ liệu cần biết ngôn ngữ lập trình gì
+          - ngôn ngữ nào là cần thiết nhất trong ngành khoa học dữ liệu
+          - để nắm kiến thức căn bản trong ngành khoa học dữ liệu cần biết ngôn ngữ nào
+          - thầy cô cho em hỏi ngôn ngữ nào cần học khi chọn ngành khoa học dữ liệu vậy
+          - có phải python là ngôn ngữ cần thiết trong ngành khoa học dữ liệu
+          - cần trang bị ngôn ngữ nào khi làm trong ngành khoa học dữ liệu
+          - để học phân tích dữ liệu trong ngành khoa học dữ liệu thì cần biết ngôn ngữ nào
+          - em biết Java liệu có thể học ngành khoa học dữ liệu không
+          - ngôn ngữ nào là quan trọng nhất trong ngành khoa học dữ liệu vậy thầy cô
+          - ngành khoa học máy tính sử dụng ngôn ngữ lập trình nào là chính
+          - em nên tìm hiểu ngôn ngữ nào khi học khoa học máy tính
+          - ngôn ngữ python có quan trọng khi học khoa học máy tính không ạ
+          - em học khoa học máy tính thì có nên học ngôn ngữ python không ạ
+          - ngôn ngữ nào là chính khi học khoa học máy tính
+          - em có biết sơ về python thì có nên học khoa học máy tính không
+          - học khoa học máy tính có cần biết nhiều ngôn ngữ lập trình không
+          - muốn học khoa học máy tính thì cần tìm hiểu ngôn ngữ lập trinh nào
+          - học khoa học máy tính có cần sử dụng ngôn ngữ java không
+          - java có được sử dụng khi học khoa học máy tính không
+          - cho em hỏi học ngành kỹ thuật phần mềm là mình sẽ được dạy những ngôn ngữ lập trình nào
+          - cho em hõi là ngành kỹ thuật phần mềm trường mình chuyên về ngôn ngữ nào
+          - cho mình hỏi là ngành kỹ thuật phần mềm có dạy java không
+          - ngành kỹ thuật phần mềm dạy về ngôn ngữ lập trình nào
+          - ngành kỹ thuật phần mềm dạy về ngôn ngữ lập trình gì
+          - đối với ngôn ngữ java thì trường mình dạy về mảng nào
+          - cho em hỏi học ngành kỹ thuật phần mềm thì nên biết bao nhiêu ngôn ngữ
+          - cho mình hỏi học về lập trình phần mềm thì có thể chuyển sang một ngôn ngữ mới một cách nhanh chóng không
+          - cho mình hỏi thì theo ngành kỹ thuật phần mềm thì cần biết bao nhiêu ngôn ngữ
+          - cho em hỏi họ ngành kỹ thuật phần mềm thì nên biết nhiều ngôn ngữ hay sao
+          - cho em hỏi chọn ngành kỹ thuật phần mềm thì có cần nắm vững một ngôn ngữ nào không
+          - cho mình hỏi là theo ngành kỹ thuật phần mềm thì có cần phải học trước một ngôn ngữ lập trình nào không
+          - chọn ngành kỹ thuật phần mềm thì có cần biết trước căn bản môn java không
+          - học ngành kỹ thuật phần mềm thì sẽ được dạy ngôn ngữ nào vậy
+          - chọn ngành kỹ thuật phần mềm thì có được dạy java không vậy
+          - chuyên ngành kỹ thuật phần mềm có được học c sharp không
+          - học ngôn ngữ lập trình nào trong ngành kỹ thuật phần mềm
+          - ngành công nghệ thông tin có lập trình về java không vì mình rất thích java
+          - ngành công nghệ thông tin có lập trình về python không vì mình rất thích code bằng python
+          - chuyên ngành hệ thống thông tin hay dùng ngôn ngữ gì để code
+    - intent: nu
+      examples: |
+          - ngành này có nhiều nữ không
+          - mình nghe nói ngành này ít nữ học lắm
+          - có nhiều nữ theo học ngành này không
+          - các bạn nữ ngành này xin không
+          - sinh viên nữ có nhiều khi chọn ngành này không
+          - ngành hệ thống thông tin có nhiều nữ học không
+          - các bạn nữ học kỹ thuật phần mềm có nhiều người theo học hay không
+          - nữ ngành công nghệ thông tin này như thế nào
+          - nữ học khoa học máy tính nhiều không
+          - nữ ngành khoa học dữ liệu có xinh không
+          - nghe đồn ngành hệ thống thông tin này nhiều nữ học lắm
+          - nghe đồn ngành khoa học máy tính có rất nhiều nữ theo học phải không ạ
+          - ngành công nghệ thông tin có rất nhiều nữ phải không
+          - nữ ngành hệ thống thông tin này xinh không
+          - có phải nữ  ngành công nghệ thông tin xin lắm phải không
+          - ngành này có nhiều nữ học không
+          - học công nghệ thông tin chắc ít lắm gái lắm phải không
+          - em là nữ không biết chọn ngành khoa học dữ liệu có phù hợp hay không
+          - ngành khoa học máy tính có phù hợp với các bạn nữ không
+          - chuyên ngành hệ thống thông tin có nhiều nữ chọn lắm hả
+    - intent: chatluonggiaovien
+      examples: |
+          - trình độ giảng viên của ngành này như thế nào
+          - giảng viên ngành này đủ trình độ để dạy cho sinh viên không 
+          - chất lương giảng viên của ngành này có cao không
+          - giảng viên ngành này có giỏi không
+          - chất lượng giáo viên ngành khoa học máy tính này có cao không
+          - trình độ giảng viên ngành công nghệ thông tin như thế nào
+          - giảng viên ngành hệ thống thông tin giỏi không
+          - giảng viên ngành kỹ thuật phần mềm có kinh nghiệm thực tế không
+          - nghe nói ngành hệ thống thông tin thầy cô đang làm việc tại các công ty nước ngoài hả
+          - ngành khoa học dữ liệu chất lượng giảng viên rất tốt phải không
+          - giảng viên ngành khoa học máy tính có trình độ như thế nào
+          - chất lượng giảng viên ngành công nghệ thông tin có đạt chuẩn
+          - giảng viên ngành hệ thông tin có giỏi không vậy
+          - giảng viên kỹ thuật phần mềm có trình độ như thế nào
+          - trình độ giảng viên của khoa học dữ liệu có đáp ứng được không
+    - intent: tinhcach
+      examples: |
+          - ngành này có phù hợp với những bạn có tính cách bảo thủ không
+          - để theo ngành này thì cần có tính cách như thế nào
+          - mình khá trầm tính vậy có theo ngành này được không
+          - mình bảo thủ không biết có phù hợp với ngành này không
+          - tính mình khá nóng không biết có phù hợp với ngành này không
+          - tính cách của dân khoa học máy tính thường như thế nào 
+          - tính cách như thế nào để học sẽ học tốt chuyên ngành của mình
+          - tính cách như thế nào để học sẽ học tốt khoa học máy tính 
+          - tính cách hơi nóng có học được ngành công nghệ thông tin 
+          - thiếu tính kiên nhẫn có theo công nghệ thông tin được không 
+          - có phải người trầm tính là học giỏi công nghệ hay không
+          - tính cách năng động nên chọn chuyên ngành nào
+          - tính cách hơi vụng về có học được ngành công nghệ thông tin không
+          - tính mình năng động không biết có phù hợp với ngành này không
+          - mình hơi rụt rè không biết có thể chọn ngành kỹ thuật phần mềm không
+          - mình hơi vội vàng thì không biết phù hớp với ngành nào nữa
+          - để theo ngành khoa học dữ liệu thì cần có tính cách gì
+    - intent: thuctap
+      examples: |
+          - ngành này thực tập như thế nào vậy
+          - mình nên đi thực tập năm mấy
+          - ngành này có thể đi thực tập ở những chỗ nào
+          - học bao lâu thì có thể đi thực tập
+          - mình muốn đi thực tập sớm có được không
+          - cần có những kiến thức căn bản nào để đi thực tập
+          - mình có thể đi thực tập ở những công ty nào
+          - muốn đi thực tập cần chuẩn bị những gì
+          - tư vấn cho mình về việc thực tập doanh nghiệp đi
+          - thực tập sớm có lợi ích gì
+          - thực tập có giúp được gì sau này hay không
+          - nên chọn những công ty nào để đăng ký thực tập
+          - cho hỏi thời gian thực tập trong bao lâu
+          - những nơi thực tập cho ngành khoa học dữ liệu
+          - thầy cô cho em hỏi mình có thể đi thực tập ở đâu nếu chọn ngành khoa học dữ liệu
+          - trường mình có liên kết với công ty nào cho sinh viên ngành khoa học dữ liệu đi thực tập không
+          - sinh viên ngành khoa học dữ liệu có thể thực tập ở công ty nào khi thực tập vậy ạ
+          - có những công ty nào sinh viên khoa học dữ liệu có thể đi thực tập vậy ạ
+          - khoa có hỗ trợ sinh viên khoa học dữ liệu việc tìm kiếm công ty thực tập không
+          - có phải sinh viên khoa học dữ liệu phải tự đi kiếm công ty thực tập phải không
+          - có thể giới thiệu các công ty nào cho sinh viên khoa học dữ liệu thực tập không
+          - mình cần biết công ty nào cho sinh viên khoa học dữ liệu đi thực tập
+          - học ngành khoa học dữ liệu có thể đi thực tập ở đâu
+          - các doanh nghiệp có sẵn sàng nhận sinh viên khoa học dữ liệu để thực tập
+          - sinh viên khoa học dữ liệu thì cần bao nhiêu năm thì có thể đi thực tập
+          - thực tập thì mình tự chọn công ty thực tập hay sao
+          - cho mình hỏi ngành này thì mình nên chọn những công ty nào để thực tập
+          - thực tập ngành này thì chọn những công ty nào để thực tập cho đúng chuyen ngành
+          - thực tập ngành kỹ thuật phần mềm thì được giới thiệu công ty hay mình phải tự tìm công ty để thực tập ạ
+          - ủa cho em hỏi ngành kỹ thuật phần mềm vào thực tập thì mình sẽ làm gì
+          - mình muốn hỏi là ngành kỹ thuật phần mềm thực tập là vô làm gì
+          - ngành kỹ thuật phần mềm thực tập thì công ty cho mình là công việc gì
+          - khi thực tập ngành kỹ thuật phần mềm thì vô đó làm gì
+          - khi đi thực tập ngành kỹ thuật phần mềm thì công ty sẽ cho mình làm những công việc gì
+          - thực tập chuyên ngành kỹ thuật phần mềm có thể chọn những công ty như thế nào để thực tập
+          - có phải ngành kỹ thuật phần mềm phải chọn những công ty làm phần mềm để thực tập hay không
+          - học kỹ thuật phần mềm nên chọn công ty thực tập như thế nào
+          - ngành kỹ thuật phần mềm thì khi đi thực tập nên chọn công ty ra sao
+          - khi nào thì sinh viên công nghệ thông tin mới được đi thực tập
+          - giờ em muốn đi thực tập ở các doanh nghiệp thì nhà trường có hỗ trợ cho em không ạ
+          - ngành công nghệ thông tin có môn học thực tập không ạ
+    - intent: xuhuong
+      examples: |
+          - xu hướng của ngành này trong tương lai như thế nào
+          - trong tương lai thì ngành này có xu hướng như thế nào
+          - ngành này trong tương lai thì có xu hướng gì
+          - tương lai của ngành này có phát triển hơn không
+          - xu hướng của ngành công nghệ thông tin hiện nay là gì
+          - chuyên ngành này thì có xu hướng như thế nào nếu theo học
+          - ngành này học xong ra trường có việc làm hay không
+          - những công việc có thể  ứng tuyển khi học chuyên ngành này
+          - nhu cầu việc làm của chuyên ngành này như thế nào
+          - con đường nghề nghiệp khi theo ngành công nghệ thông tin
+          - bạn em nói học ngành khoa học dữ liệu không có tương lai
+          - thầy cô cho em hỏi trong tương lai thì ngành khoa học dữ liệu sẽ như thế nào
+          - mình vẫn chưa biết có nên theo học ngành khoa học dữ liệu không sợ sau này thất nghiệp
+          - tương lai của khoa học dữ liệu như thế nào
+          - nhu cầu tuyển dụng trong tương lai của khoa học dữ liệu như thế nào
+          - xu hướng của ngành khoa học dữ liệu trong tương lai như thế nào
+          - tương lai của khoa học dữ liệu như thế nào
+          - triển vọng nghề nghiệp của hệ thống thông tin như thế nào
+          - trong tương lai thì ngành khoa học máy tính có xu hướng như thế nào
+          - nếu mình chọn ngành khoa kỹ thuật phần mềm thì xu hướng của nó như thế nào
+    - intent: cachhoc
+      examples: |
+          - cần học như thế nào nếu chọn ngành này
+          - học như thế nào thì phù hợp nếu chọn ngành này
+          - để học tốt ngành này thì cần học như thế nào
+          - có thề chia sẽ cách học hiệu quả khi chọn ngành này không vậy
+          - em sưu tầm tận 10GB tài liệu nhưng vẫn học chưa tốt tại sao 
+          - em tải rất nhiều tài liệu nhưng không đụng tới 
+          - học thế nào để giỏi ngành công nghệ thông tin 
+          - học làm sao để master ngôn ngữ ngành công nghệ thông tin 
+          - cách nâng cao giải thuật nghành công nghệ thông tin 
+          - cách nâng cao trình độ lập trình 
+          - cách để không lạc hậu ngành 
+          - cần học thế nào không lỗi thời ngành công nghệ thông tin
+          - học như thế để có việc làm ngành công nghệ thông tin 
+          - làm thế nào để bắt kịp xu thế ngành công nghệ thông tin hiện nay
+          - làm thế nào để nắm bắt công nghệ mới một cách nhanh chóng
+          - làm thế nào để học tốt ngành kỹ thuật phần mềm
+          - muốn học tốt ngành kỹ thuật phần mềm thì phải làm gì
+          - muốn có kết quả cao trong ngành kỹ thuật phần mềm thì cần phải làm như thế nào
+          - ngành kỹ thuật phần mềm khó vậy thì làm thế nào để học tốt
+          - muốn học tốt ngành kỹ thuật phần mềm thì chúng ta cần phải có kế hoạch học tập rõ ràng đúng không
+    - intent: vieclam
+      examples: |
+          - việc làm ngành này như thế nào
+          - cơ hội việc làm như thế nào của khoa học dữ liệu
+          - công nghệ thông tin ra trường việc làm có ổn định không
+          - việc làm như thế nào khi học xong hệ thống thông tin
+          - công việc thường có của ngành công nghệ thông tin
+          - học hệ thống thông tin ra trường có dễ kiếm việc làm không
+          - học khoa học máy tính ra dễ kiếm việc làm không
+          - dễ kiếm việc khi học ngành kỹ thuật phần mềm không
+          - nghe nói học công nghệ thông tin là có việc làm ngay phải không
+          - có phải dể kiếm việc làm trong ngành hệ thống thông tin phải không
+          - công việc sau khi tốt nghiệp ngành khoa học máy tính
+          - tỉ lệ sinh viên ngành khoa học dữ liệu ra trường có việc làm cao không
+          - sinh viên vừa  tốt nghiệp ngành này có dể kiếm việc không
+          - học ngành khoa học dữ liệu có việc làm nhanh không
+          - em sợ học ngành khoa học dữ liệu ra trường không có việc làm
+          - thầy cô cho em hỏi ngành khoa học dữ liệu có dễ kiếm việc tại TPHCM không ạ
+          - tốt nghiệp ngành khoa học dữ liệu tới đó có nó còn dễ kiếm việc không vậy
+          - bạn em nói học ngành này khó kiếm việc lắm tại nó mới
+          - với sự bùng nổ của dữ liệu có phải ngành khoa học dữ liệu dễ kiếm được việc
+          - dữ liệu trong cuộc sống ngày một càng nhiều có vẻ ngành này đang cần nhiều người làm việc
+          - trong tương lại ngành khoa học dữ liệu có dễ kiếm được việc làm
+          - sau này ra trường không biết có kiếm được việc trong ngành khoa học dữ liệu hay không
+          - tốt nghiệp khoa học dữ liệu thì có việc làm ngay không
+          - cơ hội việc làm của sinh viên ngành khoa học máy tính
+          - tỉ lệ việc làm sau khi tốt nghiệp của sinh viên học khoa học máy tính
+          - nhu cầu nhân lực ngành kỹ thuật phần mềm có cao không
+          - ngành kỹ thuật phần mềm nhu cầu nhân lực ngành này ra sao
+          - ngành kỹ thuật phần mềm có thừa nhân lực không
+          - em chọn ngành kỹ thuật phần mềm thì cho em hỏi nhu cầu nhân lực ngành này sao
+          - mình muốn theo ngành kỹ thuật phần mềm mà không biết nhu cầu tuyển dụng của ngành này có cao không
+          - cho em hỏi việc làm của ngành kỹ thuật phần mềm có dễ tìm không ạ
+          - cho mình hỏi là tìm công ty làm về chuyên ngành kỹ thuật phần mềm không ạ
+          - cho em hỏi là các công ty làm về phần mềm có nhiều không vậy
+          - nhu cầu tuyển dụng lập trình viên ngành kỹ thuật phần mềm có cao không
+          - cho em hỏi học ngành kỹ thuật phần mềm tìm việc có dễ không
+          - cơ hội việc làm đối với chuyên ngành hệ thống thông tin
+          - học ngành công nghệ thông tin ra có bị thất nghiệp hay không
+    - intent: lamgikhiratruong
+      examples: |
+          - ngành này ra trường thì làm việc gì
+          - sau khi tốt nghiệp mình có thể làm được những gì
+          - cho em hỏi học ngành kỹ thuật phần mềm sau này ra làm được gì
+          - cho mình họi cái học làm phần mềm thì sau này ra trường là được cái gì
+          - học ngành kỹ thuật phần mềm ra làm gì
+          - những công việc có thề làm khi chọn ngành kỹ thuật phần mềm
+          - làm gì khi học ngành kỹ thuật phần mềm
+          - chọn ngành kỹ thuật phần mềm thì sau này ra trường đi làm gì
+          - học kỹ thuật phần mềm sau này đi làm app được không
+          - học ngành kỹ thuật phần mềm sau này ra trường đi làm ứng dụng được không
+          - học ngành kỹ thuật phần mềm sau này đi làm ứng dụng trên diện thoại được không
+          - cho tao hỏi học ngành kỹ thuật phần mềm sau này làm những công việc gì
+          - cho em hõi học ngành kỹ thuật phần mềm sang năm 3 thì có thể đi làm việc gì
+          - cho mình hỏi là học ngành kỹ thuật phần mềm thì ứng dụng vào những việc gì
+          - kỹ thuật phần mềm làm được những việc gì
+          - kỹ thuật phần mềm làm đươc những công việc nào
+          - cho em hỏi là làm được gì khi chọn ngành kỹ thuật phần mềm
+          - cho mình hỏi học ngành kỹ thuật phần mềm thì sau này làm được những mảng nào
+          - cho mình hỏi ngành kỹ thuật trường mình sau này ra trường có làm được bên mảng mobile không
+          - cho em hỏi những công việc trong ngành kỹ thuật phần mềm
+          - cho tao hỏi ngành kỹ thuật phần mềm sau này ra trường làm web được không
+          - học khoa học máy tính ra trường làm gì
+          - học khoa học máy tính có trở thành giảng viên được không
+          - học khoa học máy tính xong thì làm được gì
+          - sinh viên ngành khoa học máy tính tốt nghiệp xong thì làm gì
+          - sinh viên ngành khoa học máy tính làm chuyên viên xử lý ảnh được không
+          - nhu cầu việc làm của ngành công nghệ thông tin ở việt nam có ổn không
+          - sinh viên ngành khoa học máy tính ra trường có thể làm gì
+          - học hệ thống thông tin ra thì làm gì sau khi ra trường
+          - sau khi học xong khóa học ngành công nghệ thông tin thì ra làm gì ạ
+          - nhu cầu việc làm của ngành công nghệ thông tin ở việt nam như thế nào
+    - intent: khokhan
+      examples: |
+          - theo học ngành này có khó không
+          - có khó khăn gì khi mình theo học ngành này
+          - những khó khăn gì khi học ngành này
+          - ngành này có khó không vậy
+          - mình phải đối mặt những khó khăn gì khi chọn ngành này
+          - khăn khăn gì thường gặp nếu học ngành này
+          - chuyên ngành này có khó không vậy nghe mấy bạn em nói nó khó lắm
+          - nghe nói ngành này học khó lắm có phải không
+          - theo ngành kỹ thuật phần mềm có khó không
+          - ngành kỹ thuật phần mềm học có khó không
+          - cho em hỏi anh chị học ngành kỹ thuật phần mềm rớt môn nhiều không
+          - ngành kỹ thuật phần mềm có những môn nào khó
+          - có phải những môn học khó đều tập trung ở những năm cuối
+          - cho em hỏi mấy năm cuối của ngành kỹ thuật phần mềm học có khó không vậy
+          - em nghe nói ngành khoa học dữ liệu rất khó theo nổi phải không
+          - theo học ngành khoa học dữ liệu không biết có nổi không nữa sợ rớt môn quá
+          - em sợ khi theo học ngành khoa học dữ liệu không biết có nổi không nữa
+          - mình sợ theo không nổi khi theo học khoa học dữ liệu vì kiến thức khó tiếp thu
+          - học ngành hệ thống thông tin có khó không
+          - những khó khăn mà sinh viên ngành công nghệ thông tin mắc phải trong quá trình học tập là gì
+    - intent: daotao
+      examples: |
+          - ngành này đào tạo những gì
+          - cho hỏi chương trình đào tạo của ngành này đi
+          - nếu chọn ngành này thì mình được đào tạo những gì
+          - ngành kỹ thuật phần mềm dạy về web hay app vậy
+          - cho hỏi ngành kỹ thuật trường mình có dạy về làm app điện thoại hay không
+          - thầy cô cho em hỏi ngành kỹ thuật phần mềm trường mình có đào tạo về làm web không vậy
+          - cho mình hỏi ngành kỹ thuật phần mềm có dạy bảo mật không ạ
+          - cho tui hỏi học ngành kỹ thuật phần mềm thì có được dạy về hack không vậy
+          - cho mình hỏi là học ngành kỹ thuật phần mềm có hack được facebook không
+          - cho mình hỏi học ngành kỹ thuật phần mềm thì có làm được game không vậy
+          - cho mình hỏi trường mình ngành kỹ thuật phần mềm có dạy lập trình game không vậy
+          - cho mình hỏi ngành này có dạy lập trình ios không
+          - cho tao hỏi ngành kỹ thuật phần mềm học xong thì có làm được game không
+          - học kỹ thuật phần mềm thì có được dạy lập trình ios không
+          - cho tui hỏi học chuyên ngành kỹ thuật phần mềm thì có dạy về lập trình android không vậy
+          - cho mình hỏi học kỹ thuật phần mềm thì bắt buộc phải học về phần mềm hay có làm web nữa vậy
+          - lập trình web bên kỹ thuật phần mềm dạy về ngôn ngữ gì
+          - lập trình web kỹ thuật phần mềm dạy backend hay frontend vậy
+          - cho em hỏi học kỹ thuật phần mềm thì mình nên theo web hay app
+          - cho tao hỏi ngành kỹ thuật phần mềm trường mình mạnh về web hay app
+          - hệ thống thông tin là học cái gì
+          - kiến thức mà thầy cô dạy ở chuyên ngành hệ thống thông tin là gì
+          - nếu chọn khoa học dữ liệu thì sinh viên sẽ được đào tạo những gì
+          - chương trình đào tạo ngành hệ thống thông tin
+    - intent: tienganh
+      examples: |
+          - tiếng anh của ngành này có quan trọng không
+          - nếu chọn ngành này thì tiếng anh có quan trọng
+          - tiếng anh bao nhiêu là đủ khi chọn ngành này
+          - tiếng anh của mình không tốt không biết có theo ngành này được không
+          - tầm quan trọng của tiếng anh khi theo học ngành này
+          - cho em hỏi là chọn ngành kỹ thuật phần mềm thì yêu cầu tiếng anh có cao không
+          - tiếng anh trong ngành kỹ thuật phần mềm có cao không
+          - yêu cầu tiếng anh trong ngành kỹ thuật phần mềm có thực sự cần thiết hay không
+          - cho mình hỏi là chọn ngành kỹ thuật mà tiếng anh không tốt thì phải làm thế nào
+          - cho mình hỏi chọn ngành kỹ thuật phần mềm thì tiếng anh đọc hiểu có đủ hay không
+          - cho mình hỏi mình chỉ biết tiếng anh đọc hiểu thì có theo được ngành kỹ thuật phần mềm hay không
+          - cho hỏi tiếng anh trong ngành kỹ thuật phần mềm dùng để làm gì
+          - cho hỏi chọn ngành phần mềm thì có cần biết tiếng anh không
+          - tiếng anh căn bản đọc hiểu thôi thì có theo được ngành kỹ thuật phần mềm không
+          - cho em hỏi tiếng anh dùng để làm gì trong ngành kỹ thuật phần mềm vậy
+          - cho em hỏi tiếng anh không được tốt thì nó nên chọn ngành kỹ thuật phần mềm không ạ
+          - cho mình hỏi chọn ngành kỹ thuật phần mềm không tốt tiếng anh thì có ảnh hưởng việc học k vậy
+          - cho em hỏi tài liều của ngành kỹ thuật phần mềm là toàn tiếng anh hay sao
+          - cho mình hỏi ngành kỹ thuật phần mềm tài liệu có nhiều tiếng anh không
+          - cho hỏi là yêu cầu của ngành kỹ thuật phần mềm là tiếng anh chuyên ngành hay sao
+          - cho hỏi em chỉ biết sơ sơ tiếng anh chuyên ngành thì có theo được ngành kỹ thuật phần mềm không
+    - intent: hoi_thongTinKhoaChung_tongQuat
+      examples: |
+          - bạn có thể cho tôi thông tin về khoa được không
+          - thông tin tổng quát về khoa
+          - hãy giới thiệu tổng quát về khoa
+          - tôi muốn biết thông tin về khoa cntt của trường
+          - bây giờ bạn có thể cho tôi biết thông tin chung về khoa được không
+          - bạn có thể giới thiệu về khoa
+          - bạn hãy nêu những thông tin cơ bản về khoa
+          - thông tin về khoa
+          - khoa
+          - bạn cho mình biết các thông tin về khoa cntt trường đại học công nghiệp được không
+          - bạn có thể cho tôi biết được thông tin về khoa hay không
+          - không biết khoa mình hình thành từ năm nào
+          - bạn cho tôi biết khoa cntt của trường hình thành từ năm bao nhiêu không
+          - bạn cho tôi biết khoa cntt của trường đại học công nghiêp hình thành từ năm bao nhiêu không
+          - admin cho mình biết là khoa cntt có phương châm như thế nào
+          - tôi muốn biết phương châm cảu khoa cntt
+          - phương châm khoa công nghệ thông tin
+          - khoa cntt hình thành khi nào
+          - khoa công nghệ thông tin thành lập vào thời gian nào
+          - thời gian thành lập khoa công nghệ thông tin
+          - hãy cho tôi biết năm thành lập khoa công nghệ thông tin
+          - hãy cho tôi biết năm thành lập khoa
+          - tôi muốn biết năm thành lập của khoa cntt
+          - cho tôi hỏi năm thành lập của khoa
+          - bây giờ cho tôi biết phương châm của khoa cntt là gì
+          - khoa cnntt hình thành từ khi nào và phương châm của khoa là gì
+          - admin cho tôi biết là thời gian hình thành khoa công nghệ thông tin
+          - hãy cho tôi biết các thông tin về khoa công nghệ thông tin trường công nghiệp
+          - cho tui biết thông tin khoa trường đại học công nghiệp
+    - intent: hoi_thongTinKhoaChung_tamNhin
+      examples: |
+          - bạn hãy nêu cho tôi tầm nhìn của khoa trong những năm tới
+          - cho tôi biết tầm nhìn của khoa
+          - tầm nhìn của khoa
+          - thông tin chung về tầm nhìn của khoa công nghệ thông tin như thế nào
+          - bạn cho mình thông tin tầm nhìn khoa cntt được không
+          - tầm nhìn khoa cntt trường dh cn như thế nào
+          - tầm nhìn
+          - không biết khoa cntt có tầm nhìn như thế nào đối với quá trình hội nhập quốc tế hiện nay
+          - bạn có thể cho biết tôi biết tầm nhìn của khoa như thế nào đối với hoàn cảnh hiện tại
+          - với tình hình hiện tại thì khoa công nghệ thông tin của trưởng mình có tầm nhìn nhử thế nào
+          - hãy nêu lên tầm nhìn của khoa trong thời đại 4.0 hiện nay
+          - không biết tầm nhìn của khoa nhử thế nào vây
+          - đối với khoa cntt thì tầm nhìn như thế nào
+    - intent: hoi_thongTinKhoaChung_suMenh
+      examples: |
+          - hãy nêu sứ mệnh của khoa công nghệ thông tin
+          - bạn có thể nêu lên sứ mệnh của khoa
+          - sứ mệnh của khoa
+          - thông tin chung khoa, sứ mệnh
+          - sứ mệnh
+          - sứ mênh của khoa cntt
+          - thông tin khoa sứ mệnh
+          - hi, bạn cho mình biết sứ mệnh khoa cntt được không
+          - khoa có sứ mệnh như thế nào đối với quá trình đào tạo thế hệ trẻ
+          - tôi muốn biết sứ mệnh của khoa như thế nào
+          - bây giờ bạn có thể nêu lên sứ mệnh cảu khoa trong việc đào tạo nguồn nhân lực cho xã hội
+          - tôi muốn xem khoa có sứ mệnh như thé nào trong thởi buổi hiện nay
+    - intent: hoi_thongTinKhoaChung_chucNangNhiemVu
+      examples: |
+          - chức năng của khoa
+          - chức năng nhiệm vụ khoa cntt
+          - chức năng nhiệm vụ khoa như thế nào
+          - nhiệm vụ của khoa
+          - bạn cho mình biết chức năng nhiệm vụ khoa
+          - bạn cho tôi biết chức năng và nhiệm vụ của khoa
+          - hãy nêu chức năng và nhiệm vụ của khoa
+          - tôi muốn biết chức năng của khoa
+          - tôi muốn biết chức năng, nhiêm vụ của khoa công nghẹ thông tin
+          - tôi muốn biết chức năng, nhiêm vụ của khoa cntt
+          - chức năng chính của khoa cntt
+          - bây giờ tôi muốn biết
+    - intent: hoi_thongTinKhoaChung_doiNgu
+      examples: |
+          - đội ngũ giảng viên
+          - giảng viên
+          - thông tin giảng viên
+          - cho tui biết thông tin giảng viên khoa cntt
+          - bạn cho mình biết thông tin về giảng viên của trường đại học công nghiệp tp hồ chí minh
+          - bạn cho tôi biết về giảng viên trường cn tp hcm
+          - bot cho mình biết đội ngũ giảng viên
+          - đội ngũ giảng viên khoa cntt thế nào
+          - bạn biết đội ngũ giảng viên ra sao
+          - thông tin đội ngũ giảng viên
+          - hiện nay khoa có bao nhiêu giảng viên
+          - khoa có bao nhieu tiến sĩ, thạc sĩ, giáo sư
+          - cho tôi biết đội ngũ giảng viên của khoa
+    - intent: hoi_thongTinKhoaChung_lienHe
+      examples: |
+          - tôi muốn liên hệ khoa
+          - làm sao để liên hệ khoa
+          - mình có gặp một số vấn đề, không biết mình có thể liên hệ với khoa như thể nào
+          - bây giờ làm sao để liên hệ với khoa cntt
+          - liên hệ khoa công nghệ thông tin
+          - thông tin liên hệ
+          - liên hệ khoa
+          - liên hệ
+    - intent: hoi_thongTinKhoaChung_daoTao
+      examples: |
+          - đào tạo của khoa hiện nay như thế nào
+          - đào tạo
+          - thông tin đào tạo
+          - đào tạo khoa cntt
+          - bạn cho mình biết các thông tin về đào tạo
+          - thông tin chung, đào tạo
+          - hello, bot cho tui biết chương trình đào tạo của khoa
+          - hello, bot cho tui biết quy trình đào tạo của khoa
+          - hello, bot cho tui biết tiến trình đào tạo của khoa
+          - hi, bot cho tui biết chương trình đào tạo của khoa
+          - ok, bot cho tui biết quy trình đào tạo của khoa
+          - well, bot cho tui biết tiến trình đào tạo của khoa
+          - cho tôi biết về đào tạo của khoa
+          - bạn hãy cho tôi biết thông tin về đào tạo của khoa như thế nào
+          - tôi muốn biết thêm thông tin về đào tạo của khoa
+    - intent: hoi_thongTinKhoaChung_truongKhoa
+      examples: |
+          - hiện tại ai là trưởng khoa
+          - trưởng khoa
+          - thông tin trưởng khoa
+          - thông tin chung trưởng khoa
+          - trưởng khoa khoa cntt
+          - trưởng khoa khoa cntt trường đại học cn
+          - trưởng khoa khoa cntt trường đại học công nghiệp
+          - trưởng khoa khoa cntt trường đại học cn thành phố hồ chí minh
+          - trưởng khoa qua các thời kỳ
+          - bạn có thể cho tôi biết các trưởng khoa không
+          - bây giờ tôi muốn xem các vị trưởng khoa trong các giai đoạn hình thành khoa
+          - bạn có biết hiện nay ai là trưởng khoa cntt không
+          - hãy cho tôi biết trưởng khoa cntt
+          - ok, bây giờ tôi muốn biết được ai là trưởng khoa công nghệ thông tin
+          - tôi muôn gặp trưởng khoa công nghệ thông tin, bạn có thể cho tôi thông tin không
+          - bạn hãy cho tôi biết trưởng khoa
+          - tôi muốn xem thông tin về trưởng khoa cntt
+          - không biết bây giờ ai là trưởng khoa công nghệ thông tin vây

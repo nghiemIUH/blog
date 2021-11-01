@@ -1,0 +1,112 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+    - story: story No1
+      steps:
+          - user: |
+                xin chào
+            intent: chaohoi
+          - action: utter_chaohoi
+          - user: |
+                mình cần tư vấn chọn chuyên ngành
+            intent: tach_nganh
+          - action: utter_tach_nganh
+          - user: |
+                tôi muốn liên hệ khoa
+            intent: hoi_thongTinKhoaChung_lienHe
+          - action: utter_hoi_thongTinKhoaChung_lienHe
+          - user: |
+                khi nào thì sinh viên có thể đi thực tập
+            intent: thuctap
+          - action: action_thuctap
+          - user: |
+                cảm ơn
+            intent: thank
+          - action: utter_thank
+          - user: |
+                ngành công nghệ thông nhiều nữ học không
+            intent: nu
+          - action: utter_nu
+          - user: |
+                nếu không phù hợp thì có thể chuyển sang ngành khác không
+            intent: dinhhuongsai
+          - action: action_dinhhuongsai
+          - user: |
+                tạm biệt
+            intent: bye
+          - action: utter_bye
+
+    - story: story No2
+      steps:
+          - user: |
+                xin chào
+            intent: chaohoi
+          - action: utter_chaohoi
+          - user: |
+                xu hướng của ngành khoa học máy tính là gì vậy
+            intent: xuhuong
+          - action: action_xuhuong
+          - user: |
+                ngôn ngữ được sử dụng nhiều trong ngành kĩ thuật phần mềm là gì vậy
+            intent: ngonngu
+          - action: action_ngonngu
+          - user: |
+                tài liệu mình có thể tìm hiểu thêm ở đâu vậy
+            intent: tailieu
+          - action: action_tailieu
+          - user: |
+                cảm ơn
+            intent: thank
+          - action: utter_thank
+          - user: |
+                ngành hệ thống thông tin giảng viên có dễ  không
+            intent: giangvien
+          - action: action_giangvien
+          - user: |
+                những khó khi học ngành khoa học máy tính
+            intent: khokhan
+          - action: action_khokhan
+          - user: |
+                khi nào thì sinh viên có thể đi thực tập
+            intent: thuctap
+          - action: action_thuctap
+          - user: |
+                tạm biệt
+            intent: bye
+          - action: utter_bye
+
+    - story: story No3
+      steps:
+          - user: |
+                xin chào
+            intent: chaohoi
+          - action: utter_chaohoi
+          - user: |
+                tài liệu mình có thể tìm hiểu thêm ở đâu vậy
+            intent: tailieu
+          - action: action_tailieu
+          - user: |
+                cho tôi biết tầm nhìn của khoa
+            intent: hoi_thongTinKhoaChung_tamNhin
+          - action: utter_hoi_thongTinKhoaChung_tamNhin
+          - user: |
+                tôi muốn liên hệ khoa
+            intent: hoi_thongTinKhoaChung_lienHe
+          - action: utter_hoi_thongTinKhoaChung_lienHe
+          - user: |
+                giảng viên ngành này có giỏi không
+            intent: chatluonggiaovien
+          - action: action_chatluonggiaovien
+          - user: |
+                ngành này đào tạo những gì
+            intent: daotao
+          - action: action_daotao
+          - user: |
+                ngành này có phù hợp với những bạn có tính cách bảo thủ không
+            intent: tinhcach
+          - action: action_tinhcach
+          - user: |
+                tạm biệt
+            intent: bye
+          - action: utter_bye
