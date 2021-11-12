@@ -6,13 +6,15 @@ class UserController {
     // post /sign-up
     async sign_up(request, response) {
         const data = request.body;
+        console.log(data)
         const user = db.User();
         user.username = data.username;
         user.password = user.encryptPassword(data.password);
         user.isUser = true;
         user.email = data.email;
         user.fullName = data.fullName;
-        user.avatar = request.file.path;
+        user.avatar = data.avatar;
+
 
         db.User.findOne({ username: data.username }, (err, user) => {
             if (user) {

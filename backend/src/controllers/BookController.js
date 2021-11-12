@@ -12,7 +12,7 @@ class BookController {
             book.yearOfPublication = data.yearOfPublication;
             book.description = data.description;
             book.link = data.link;
-            book.image = request.file.path;
+            book.image = data.image;
 
             await book.save((err) => {
                 if (err) {
