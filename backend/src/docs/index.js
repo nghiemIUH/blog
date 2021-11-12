@@ -1,6 +1,7 @@
 const userDocs = require("./user");
 const basicInfo = require("./basicInfor");
 const bookDocs = require("./book");
+const blogDocs = require("./blog");
 
 const merge = (obj1, obj2) => {
     let obj = { ...obj1 };
@@ -10,7 +11,8 @@ const merge = (obj1, obj2) => {
     return obj;
 };
 
-let groups = merge(userDocs, bookDocs);
+var groups = merge(userDocs, bookDocs);
+var groups = merge(groups, blogDocs);
 
 module.exports = {
     ...basicInfo,

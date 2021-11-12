@@ -24,7 +24,20 @@ const storageBook = multer.diskStorage({
     },
 });
 
+const storageBlog = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, "./uploads/blog/");
+    },
+    filename: (req, file, cb) => {
+        cb(
+            null,
+            new Date().toISOString().replace(/:/g, "-") + file.originalname
+        );
+    },
+});
+
 const uploadAvatar = multer({ storage: storageAvatar });
 const uploadBook = multer({ storage: storageBook });
+const uploadBlog = multer({ storage: storageBlog });
 
-module.exports = { uploadAvatar, uploadBook };
+module.exports = { uploadAvatar, uploadBook, uploadBlog };
