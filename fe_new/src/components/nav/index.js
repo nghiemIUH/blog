@@ -1,5 +1,5 @@
 import { Link as ReacRouterLink } from 'react-router-dom'
-import { Container, ButtonLink, Menu, Logo } from './styles/nav';
+import { Container, ButtonLink, Menu, Logo, Text } from './styles/nav';
 
 export default function Nav({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
@@ -20,3 +20,7 @@ Nav.Logo = function NavLogo({ to, ...restProps }) {
         </ReacRouterLink>
     )
 };
+
+Nav.Text = function NavText({ children, ...restProps }) {
+    return <Text{...restProps}>{children}</Text>
+}

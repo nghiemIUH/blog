@@ -40,3 +40,9 @@ export const ButtonLink = styled(ReacRouterLink)`
         background-color: #ff2e38;
     }
 `;
+
+export const Text = styled.p`
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+`

@@ -16,7 +16,7 @@ export function SignupContainer() {
                 <Signup.Input placeholder='Password' required />
                 <Signup.TextArea>Confirm password: </Signup.TextArea>
                 <Signup.Input placeholder='Confirm password' required />
-                <Signup.Text href={SIGN_IN}>Đăng nhập</Signup.Text>
+                {/* <Signup.Text href={SIGN_IN}>Đăng nhập</Signup.Text> */}
             </Signup.Form>
             <Signup.BtnFrame>
                 <Signup.Btn type='submit'>Đăng kí</Signup.Btn>
