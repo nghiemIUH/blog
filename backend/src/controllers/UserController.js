@@ -6,7 +6,6 @@ class UserController {
     // post /sign-up
     async sign_up(request, response) {
         const data = request.body;
-        console.log(data)
         const user = db.User();
         user.username = data.username;
         user.password = user.encryptPassword(data.password);
@@ -15,26 +14,32 @@ class UserController {
         user.fullName = data.fullName;
         user.avatar = data.avatar;
 
+        var error = [];
 
-        db.User.findOne({ username: data.username }, (err, user) => {
+        const d = db.User.findOne({ username: data.username });
+        const d1 = db.User.findOne({ email: data.email });
+        await d.then((user) => {
             if (user) {
-                response.status(404).send({ message: "username đã tồn tại" });
+                error.push("user đã tồn tại");
             }
         });
-
-        db.User.findOne({ email: data.email }, (err, user) => {
+        await d1.then((user) => {
             if (user) {
-                response.status(404).send({ message: "email đã tồn tại" });
+                error.push("email đã tồn tại");
             }
         });
-
-        await user.save((err) => {
-            if (err) {
-                response.status(500).send({ message: err });
-            } else {
-                response.status(200).json(user);
-            }
-        });
+        console.log(error);
+        if (error.length > 0) {
+            response.status(400).send({ message: error });
+        } else {
+            await user.save((err) => {
+                if (err) {
+                    response.status(500).send({ message: err });
+                } else {
+                    response.status(200).json(user);
+                }
+            });
+        }
     }
 
     // post /sign-in
