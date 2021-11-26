@@ -38,11 +38,13 @@ form{
 .err{
     text-align: center;
     color: red;
+    margin-top: -20px;
 }
 
 .btn-frame{
     display: flex;
     height: 30px;
+    padding-top: 10px;
 }
 
 .btn{

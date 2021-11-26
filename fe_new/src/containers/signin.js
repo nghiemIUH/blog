@@ -12,8 +12,9 @@ export function SigninContainer() {
             JSON.parse(Cookies.get("user"));
             window.location.href = HOME;
         } catch (error) {
-            Cookies.set("user", "");
-            Cookies.set("token", "");
+            Cookies.remove("token");
+            Cookies.remove("user")
+            localStorage.removeItem("avatar")
             setError("Tài khoản hoặc mật khẩu sai")
         }
     }

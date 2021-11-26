@@ -1,9 +1,16 @@
 import Books from "../components/books";
-import img from "../logo.png"
+import img from "../logo.png";
+import { useState } from "react";
 
 export function BooksContainer() {
+
+    function LoadBook() {
+        console.log("loadbook")
+    }
+
     return (
-        <Books>
+        < Books >
+            {LoadBook()}
             <Books.PageName>books</Books.PageName>
             <Books.Container>
                 <Books.Frame>

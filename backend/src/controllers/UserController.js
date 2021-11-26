@@ -36,7 +36,7 @@ class UserController {
                 if (err) {
                     response.status(500).send({ message: err });
                 } else {
-                    response.status(200).json(user);
+                    response.status(200).json({user});
                 }
             });
         }

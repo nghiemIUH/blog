@@ -1,26 +1,30 @@
+import { useState } from "react";
 import { Signup } from "../components";
-import { SIGN_IN } from "../constants/routes";
+import { HOME } from "../constants/routes";
+import Cookies from "js-cookie";
 
 export function SignupContainer() {
+
+    const [error, setError] = useState("")
+
+    const Register = () => {
+        try {
+            JSON.parse(Cookies.get("user"));
+            window.location.href = HOME;
+        } catch (error) {
+            Cookies.remove("token");
+            Cookies.remove("user")
+            localStorage.removeItem("avatar")
+            if (Cookies.get("message") === "undefined") {
+                setError("Lỗi đăng kí");
+            } else {
+                setError(Cookies.get("message"));
+                Cookies.remove("message");
+            }
+        }
+    }
+
     return (
-        <Signup>
-            <Signup.Title>Đăng kí tài khoản</Signup.Title>
-            <Signup.Form>
-                <Signup.TextArea>Họ & Tên: </Signup.TextArea>
-                <Signup.Input placeholder='Họ & Tên' required />
-                <Signup.TextArea>Địa chỉ email: </Signup.TextArea>
-                <Signup.Input placeholder='Địa chỉ email' required />
-                <Signup.TextArea>User Name: </Signup.TextArea>
-                <Signup.Input placeholder='User Name' required />
-                <Signup.TextArea>Password: </Signup.TextArea>
-                <Signup.Input placeholder='Password' required />
-                <Signup.TextArea>Confirm password: </Signup.TextArea>
-                <Signup.Input placeholder='Confirm password' required />
-                {/* <Signup.Text href={SIGN_IN}>Đăng nhập</Signup.Text> */}
-            </Signup.Form>
-            <Signup.BtnFrame>
-                <Signup.Btn type='submit'>Đăng kí</Signup.Btn>
-            </Signup.BtnFrame>
-        </Signup>
+        <Signup Register={Register} error={error} />
     )
 }

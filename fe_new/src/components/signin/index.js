@@ -6,7 +6,7 @@ export default function Signin({ Login, error }) {
 
     const [details, setDetails] = useState({ userName: "", password: "" });
 
-    const submitHandle = e => {
+    const submitHandle = async e => {
         e.preventDefault();
         const requestLogin = {
             method: 'POST',
@@ -18,18 +18,29 @@ export default function Signin({ Login, error }) {
                 "password": details.password
             })
         }
-        fetch("http://localhost:5000/user/sign-in", requestLogin)
+        await fetch("http://localhost:5000/user/sign-in", requestLogin)
             .then(response => response.json())
             .then(i => {
-                Cookies.set("user", JSON.stringify(i.user));
-                Cookies.set("token", i.accessToken);
+                try {
+                    localStorage.setItem("avatar", i.user.avatar);
+                    const user = JSON.stringify({
+                        "username": i.user.userName,
+                        "email": i.user.email,
+                        "isStaff": i.user.isStaff,
+                        "isUser": i.user.isUser,
+                        "isAdmin": i.user.isAdmin,
+                        "fullName": i.user.fullName
+                    })
+                    Cookies.set("user", user);
+                    Cookies.set("token", i.accessToken);
+                } catch (error) { };
                 Login();
             }).catch();
     }
 
     return (
         <form onSubmit={submitHandle}>
-            <h2 className="title">Đăng nhập</h2>
+            <div className="title">Đăng nhập</div>
             <div className="content">
                 <label className="label_in" htmlFor="userName">User Name: </label>
                 <input className="inp" type="text" name="User Name" id="userName" required placeholder="Tài khoản"

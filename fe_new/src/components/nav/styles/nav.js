@@ -23,6 +23,14 @@ export const Logo = styled.img`
     margin: -30px 0;
 `;
 
+export const Ava = styled.img`
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+    margin: -15px 10px;
+    border-radius: 50%;
+`;
+
 export const ButtonLink = styled(ReacRouterLink)`
     margin: 0 10px;
     Background-color: #d9000b;
@@ -42,7 +50,32 @@ export const ButtonLink = styled(ReacRouterLink)`
 `;
 
 export const Text = styled.p`
+    margin: 0 10px;
     color: white;
+    width: fit-content;
+    height: fit-content;
+    border: 0;
     font-size: 16px;
     font-weight: bold;
+    border-radius: 8px;
+    padding 8px 17px;
+    text-decoration: none;
+`
+
+export const Button = styled.button`
+    margin: 0 10px;
+    Background-color: #d9000b;
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    border: 0;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    padding 8px 17px;
+    text-decoration: none;
+
+    &:hover {
+        background-color: #ff2e38;
+    }
 `
