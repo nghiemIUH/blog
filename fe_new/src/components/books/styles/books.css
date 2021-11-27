@@ -1,0 +1,74 @@
+.pageName{
+    text-transform: uppercase!important;
+    color: #004999;
+    padding-bottom: 20px;
+    text-align: center;
+    color: #004999;
+    font-size: 30px;
+    font-weight: 600;
+    border-bottom: 1px solid #696969;
+}
+
+.bookFrame{
+    width: 100%;
+    display: flex;
+}
+
+.textUppercase{
+    text-decoration: none;
+    color: #004999;
+    text-transform: uppercase!important;
+}
+
+.bookContainer{
+    padding-top: 120px;
+    width: 70%;
+    margin: auto;
+}
+
+.bookItem{
+    display: flex;
+    margin: 10px 10px;
+    min-height: 80px;
+    width: 45%;
+}
+
+.bookCover{
+    object-fit: contain;
+    margin-left: 10px;
+    background: white;
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+}
+
+.bookInfo{
+    height: 80px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    display: inline-grid;
+    height: auto
+}
+
+.bookAuthor{
+    font-size: 14px;
+    margin: unset;
+    text-decoration: none;
+    color: #004999;
+}
+
+.bookTitle{
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+}
+
+.bookTitle:hover{
+    color: #004999;
+}
+
+.bookDate{
+    color: #696969;
+    margin: unset;
+    font-size: 14px;
+}

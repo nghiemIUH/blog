@@ -1,53 +1,22 @@
-import { Body, PageName, Container, Frame, SideBar, Items, Infor, A, UseAva, UseName, Title, Date, TextUpppercase } from "./styles/books"
+import "./styles/books.css"
 
-export default function Books({ children, ...resProps }) {
-    return <Body {...resProps}>{children}</Body>
-}
-
-Books.PageName = function BooksPageName({ children, ...resProps }) {
-    return <PageName {...resProps}>{children}</PageName>
-}
-
-Books.Container = function BooksContainer({ children, ...resProps }) {
-    return <Container {...resProps}>{children}</Container>
-}
-
-Books.Frame = function BooksFrame({ children, ...resProps }) {
-    return <Frame {...resProps}>{children}</Frame>
-}
-
-Books.Items = function BlogItems({ children, ...resProps }) {
-    return <Items {...resProps}>{children}</Items>
-}
-
-Books.Infor = function BooksInfor({ children, ...resProps }) {
-    return <Infor {...resProps}>{children}</Infor>
-}
-
-Books.A = function BooksA({ children, ...resProps }) {
-    return <A {...resProps}>{children}</A>
-}
-
-Books.UseAva = function BooksUseAva({ ...resProps }) {
-    return <UseAva {...resProps} />
-}
-
-Books.UseName = function BooksUseName({ children, ...resProps }) {
-    return <UseName {...resProps}>{children}</UseName>
-}
-
-Books.Title = function BooksTitle({ children, ...resProps }) {
-    return <Title {...resProps}>{children}</Title>
-}
-
-Books.Date = function BooksDate({ children, ...resProps }) {
-    return <Date {...resProps}>{children}</Date>
-}
-
-Books.SideBar = function BooksSideBar({ children, ...resProps }) {
-    return <SideBar {...resProps}>{children}</SideBar>
-}
-
-Books.TextUpppercase = function BooksTextUpppercase({ children, ...resProps }) {
-    return <TextUpppercase {...resProps}>{children}</TextUpppercase>
+export default function Books({ books }) {
+    return (
+        <div className="bookContainer">
+            <div className="pageName">books</div>
+            <p className="textUppercase">sách mới nhất</p>
+            <div className="bookFrame">
+                {books.map((item, index) => (
+                    <div className="bookItem" key={index}>
+                        <img className="bookCover" alt="Book Cover" src={item.image} />
+                        <div className="bookInfo">
+                            <p className="bookAuthor">{item.author}</p>
+                            <a className="bookTitle" href="http://localhost:3000/Books">{item.title}</a>
+                            <p className="bookDate" >{item.yearOfPublication}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div >
+    )
 }

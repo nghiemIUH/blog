@@ -7,13 +7,12 @@ export function NavContainer() {
     var name = ""
     try {
         name = JSON.parse(Cookies.get("user")).fullName;
-        // console.log(Cookies.get("token"));
     } catch (error) { }
 
     return (
         <Nav>
             <Nav.Logo to={ROUTES.HOME} alt='AI Lab' src={logo} />
-            {(name !== "") ? (<Nav.Text>Hello {name}</Nav.Text>) : (<></>)}
+            {(name !== "") ? (<Nav.Text>{name}'s Blog</Nav.Text>) : (<></>)}
             <Nav.Menu>
                 <Nav.ButtonLink to={ROUTES.HOME}>Home</Nav.ButtonLink>
                 <Nav.ButtonLink to={ROUTES.BLOGS}>Blogs</Nav.ButtonLink>
