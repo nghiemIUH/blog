@@ -34,27 +34,28 @@ export default function Signup({ Register, error }) {
                 "avatar": details.avatar
             })
         }
-        await fetch("http://localhost:5000/user/sign-up", requestSiginup)
-            .then(response => response.json())
-            .then(i => {
-                try {
-                    localStorage.setItem("avatar", i.user.avatar);
-                    const user = JSON.stringify({
-                        "username": i.user.userName,
-                        "email": i.user.email,
-                        "isStaff": i.user.isStaff,
-                        "isUser": i.user.isUser,
-                        "isAdmin": i.user.isAdmin,
-                        "fullName": i.user.fullName
-                    })
-                    Cookies.set("user", user);
-                    Cookies.set("token", i.accessToken);
-                } catch (error) {
-                    Cookies.set("message", i.message);
-                };
-                Register();
-            }).catch();
-
+        try {
+            await fetch("http://localhost:5000/user/sign-up", requestSiginup)
+                .then(response => response.json())
+                .then(i => {
+                    try {
+                        localStorage.setItem("avatar", i.user.avatar);
+                        const user = JSON.stringify({
+                            "username": i.user.userName,
+                            "email": i.user.email,
+                            "isStaff": i.user.isStaff,
+                            "isUser": i.user.isUser,
+                            "isAdmin": i.user.isAdmin,
+                            "fullName": i.user.fullName
+                        })
+                        Cookies.set("user", user);
+                        Cookies.set("token", i.accessToken);
+                    } catch (error) {
+                        Cookies.set("message", i.message);
+                    };
+                    Register();
+                }).catch();
+        } catch (error) { }
     }
 
     return (

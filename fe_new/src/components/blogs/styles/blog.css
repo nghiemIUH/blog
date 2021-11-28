@@ -9,7 +9,7 @@
     border-bottom: 1px solid #696969;
 }
 
-.bookFrame{
+.blogFrame{
     width: 100%;
     display: flex;
 }
@@ -20,20 +20,20 @@
     text-transform: uppercase!important;
 }
 
-.bookContainer{
+.blogContainer{
     padding-top: 120px;
     width: 70%;
     margin: auto;
 }
 
-.bookItem{
+.blogItem{
     display: flex;
     margin: 10px 10px;
     min-height: 80px;
     width: 45%;
 }
 
-.bookCover{
+.blogCover{
     object-fit: contain;
     margin-left: 10px;
     background: white;
@@ -41,7 +41,7 @@
     width: 65px;
 }
 
-.bookInfo{
+.blogInfo{
     height: 80px;
     padding: 0 20px;
     margin-bottom: 10px;
@@ -49,24 +49,24 @@
     height: auto
 }
 
-.bookAuthor{
+.blogAuthor{
     font-size: 14px;
     margin: unset;
     text-decoration: none;
     color: #004999;
 }
 
-.bookTitle{
+.blogTitle{
     text-decoration: none;
     color: #000000;
     font-size: 20px;
 }
 
-.bookTitle:hover{
+.blogTitle:hover{
     color: #004999;
 }
 
-.bookDate{
+.blogDate{
     color: #696969;
     margin: unset;
     font-size: 14px;

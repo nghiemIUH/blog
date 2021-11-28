@@ -1,52 +1,20 @@
 import Blogs from "../components/blogs";
-import img from "../logo.png"
+import { useState } from "react";
 
 export function BlogsContainer() {
+
+    const [blogs, setBlogs] = useState("");
+
+    async function loadBlog() {
+        let list = await fetch("http://localhost:5000/blog", { method: 'GET' })
+            .then(response => response.json())
+            .catch();
+        return list;
+    }
+    loadBlog().then(i => {
+        setBlogs(JSON.stringify(i));
+    });
     return (
-        <Blogs>
-            <Blogs.PageName>blog</Blogs.PageName>
-            <Blogs.Container>
-                <Blogs.Frame>
-                    <Blogs.TextUpppercase>blog mới nhất</Blogs.TextUpppercase>
-                    <Blogs.Items>
-                        <Blogs.A href='#'>
-                            <Blogs.UseAva src={img} />
-                        </Blogs.A>
-                        <Blogs.Infor>
-                            <Blogs.UseName href='#'>This Is Name Account</Blogs.UseName>
-                            <Blogs.Title href='#'>this is name blog</Blogs.Title>
-                            <Blogs.Date>this is date</Blogs.Date>
-                        </Blogs.Infor>
-                    </Blogs.Items>
-                    <Blogs.Items>
-                        <Blogs.A href='#'>
-                            <Blogs.UseAva src={img} />
-                        </Blogs.A>
-                        <Blogs.Infor>
-                            <Blogs.UseName href='#'>This Is Name Account</Blogs.UseName>
-                            <Blogs.Title href='#'>this is name blog</Blogs.Title>
-                            <Blogs.Date>this is date</Blogs.Date>
-                        </Blogs.Infor>
-                    </Blogs.Items>
-                </Blogs.Frame>
-                <Blogs.SideBar>
-                    <Blogs.TextUpppercase>câu hỏi mới nhất</Blogs.TextUpppercase>
-                    <Blogs.Items>
-                        <Blogs.Infor>
-                            <Blogs.UseName href='#'>This Is Name Account</Blogs.UseName>
-                            <Blogs.Title>this is ask</Blogs.Title>
-                            <Blogs.Date>this is date</Blogs.Date>
-                        </Blogs.Infor>
-                    </Blogs.Items>
-                    <Blogs.Items>
-                        <Blogs.Infor>
-                            <Blogs.UseName href='#'>This Is Name Account</Blogs.UseName>
-                            <Blogs.Title>this is ask</Blogs.Title>
-                            <Blogs.Date>this is date</Blogs.Date>
-                        </Blogs.Infor>
-                    </Blogs.Items>
-                </Blogs.SideBar>
-            </Blogs.Container>
-        </Blogs >
+        <Blogs blogs={blogs} />
     )
 }

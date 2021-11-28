@@ -1,18 +1,20 @@
 import Books from "../components/books";
+import { useState } from "react";
 
 export function BooksContainer() {
+
+    const [books, setBooks] = useState("");
+
     async function loadBooks() {
-        // try {
-        //     localStorage.removeItem("books");
-        // } catch { }
-        await fetch("http://localhost:5000/book", { method: 'GET' })
+        let list = await fetch("http://localhost:5000/book", { method: 'GET' })
             .then(response => response.json())
-            .then(i => {
-                localStorage.setItem("books", JSON.stringify(i));
-            });
+            .catch();
+        return list;
     }
-    loadBooks();
+    loadBooks().then(i => {
+        setBooks(JSON.stringify(i));
+    })
     return (
-        < Books books={JSON.parse(localStorage.getItem("books"))} />
+        < Books books={books} />
     )
 }

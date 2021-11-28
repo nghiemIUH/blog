@@ -27,7 +27,7 @@ export const Ava = styled.img`
     height: 60px;
     width: 60px;
     object-fit: contain;
-    margin: -15px 10px;
+    margin: -13px 10px;
     border-radius: 50%;
 `;
 
