@@ -11,7 +11,9 @@
 
 .bookFrame{
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 10px;
 }
 
 .textUppercase{
@@ -30,7 +32,6 @@
     display: flex;
     margin: 10px 10px;
     min-height: 80px;
-    width: 45%;
 }
 
 .bookCover{
