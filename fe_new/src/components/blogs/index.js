@@ -1,6 +1,6 @@
 import "./styles/blog.css"
 
-export default function Blogs({ blogs }) {
+export default function Blogs({ blogs, getBlog }) {
     var items = ""
     try {
         items = JSON.parse(blogs)
@@ -8,7 +8,7 @@ export default function Blogs({ blogs }) {
 
     return (
         <div className="blogContainer">
-            <div className="pageName">blog</div>
+            <div className="blogPageName">blog</div>
             <p className="textUppercase">blog mới nhất</p>
             <div className="blogFrame">
                 {(items !== "") ? (
@@ -19,7 +19,9 @@ export default function Blogs({ blogs }) {
                                     <img className="blogCover" alt="Blog Cover" src={item.author.avatar} />
                                     <div className="blogInfo">
                                         <p className="blogAuthor">{item.author.fullName}</p>
-                                        <a className="blogTitle" rel="noreferrer" target="_blank" href={item.link}>{item.title}</a>
+                                        <p className="blogTitle" onClick={() => {
+                                            getBlog(item)
+                                        }}>{item.title}</p>
                                     </div>
                                 </div>
                             ))
