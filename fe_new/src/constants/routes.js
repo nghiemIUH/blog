@@ -4,4 +4,4 @@ export const SIGN_UP = '/signup';
 export const SIGN_IN = '/signin';
 export const BLOGS = '/blogs';
 export const BOOKS = '/books';
-export const EDITOR = '/editor';
+export const EDITOR = '/add-blog';

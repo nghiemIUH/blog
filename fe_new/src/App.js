@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import * as ROUTES from './constants/routes';
-import { Home, Blogs, Books, Signin, Signup } from './pages/index'
+import { Home, Blogs, Books, Signin, Signup, Editor } from './pages/index'
 
 
 function App() {
@@ -20,6 +20,9 @@ function App() {
       </Route>
       <Route exact path={ROUTES.SIGN_UP}>
         <Signup />
+      </Route>
+      <Route exact path={ROUTES.EDITOR}>
+        <Editor />
       </Route>
     </Router>
   );

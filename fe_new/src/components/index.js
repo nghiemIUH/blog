@@ -7,3 +7,4 @@ export { default as BlogTitle } from './blogTitle';
 export { default as Books } from './books';
 export { default as Signin } from './signin';
 export { default as Signup } from './signup';
+export { default as Editor } from './editor';

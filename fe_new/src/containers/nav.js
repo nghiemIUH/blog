@@ -23,6 +23,12 @@ export function NavContainer() {
                     <Nav.ButtonLink to={ROUTES.SIGN_UP}>Sign Up</Nav.ButtonLink>
                 </>
                 ) : (<>
+                    <Nav.ButtonLink to={ROUTES.EDITOR}>Add Blog</Nav.ButtonLink>
+                    {(JSON.parse(Cookies.get("user")).isAdmin === true) ? (
+                        <>
+                            <Nav.ButtonLink to="#">Add Book</Nav.ButtonLink>
+                        </>
+                    ) : (<></>)}
                     <Nav.Button onClick={() => {
                         localStorage.removeItem("avatar");
                         Cookies.remove("token");
