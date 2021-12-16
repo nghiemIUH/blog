@@ -5,7 +5,7 @@ export default function BlogTitle({ blog, goBack }) {
     return (
         <div className="blogTitle__Container">
             <div className="blogTitle__Head">
-                <button onClick={() => {
+                <button className='blogTitle_Button' onClick={() => {
                     goBack();
                 }}><BsArrowLeftCircle className="blogTitle__Icon" />Go back</button>
                 <div className="blogTitle__PageName">{blog.title}</div>

@@ -2,7 +2,6 @@ import React from "react";
 import "./styles/editor.css"
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import "react-quill/dist/quill.bubble.css";
 import Quill from "quill";
 import ImageResize from "quill-image-resize-module-react";
 import Cookies from "js-cookie";
