@@ -1,10 +1,10 @@
-.blogContainer{
+.Blog__Container{
     padding-top: 120px;
     width: 70%;
     margin: auto;
 }
 
-.blogPageName{
+.Blog__PageName{
     text-transform: uppercase!important;
     color: #004999;
     padding-bottom: 20px;
@@ -14,26 +14,35 @@
     border-bottom: 1px solid #696969;
 }
 
-.blogFrame{
+.Blog__Frame{
     width: 100%;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-gap: 10px;
+    grid-gap: 1%;
 }
 
-.textUppercase{
+.Blog__TextUppercase{
     text-decoration: none;
     color: #004999;
     text-transform: uppercase!important;
 }
 
-.blogItem{
+.Blog__Item{
     display: flex;
     margin: 10px 10px;
+    padding-top: 10px;
     min-height: 80px;
 }
 
-.blogCover{
+.Blog__Item:hover{
+    background-color: blanchedalmond;
+}
+
+.Blog__Item:hover .blogCover{
+    background: beige;
+}
+
+.Blog__Cover{
     object-fit: contain;
     margin-left: 10px;
     background: white;
@@ -41,33 +50,34 @@
     width: 65px;
 }
 
-.blogInfo{
+.Blog__Info{
     height: 80px;
     padding: 0 20px;
     margin-bottom: 10px;
     display: inline-grid;
-    height: auto
+    height: auto;
+    width: 100%;
 }
 
-.blogAuthor{
+.Blog__Author{
     font-size: 14px;
     margin: unset;
     text-decoration: none;
     color: #004999;
 }
 
-.blogTitle{
+.Blog__Title{
     text-decoration: none;
     color: #000000;
     font-size: 20px;
 }
 
-.blogTitle:hover{
-    color: #004999;
-}
-
-.blogDate{
+.Blog__Date{
     color: #696969;
     margin: unset;
     font-size: 14px;
+}
+
+.Blog__Delete{
+    float: left;
 }

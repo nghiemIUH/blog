@@ -6,19 +6,21 @@ export default function Books({ books }) {
         items = JSON.parse(books)
     } catch (error) { }
     return (
-        <div className="bookContainer">
-            <div className="pageName">books</div>
-            <p className="textUppercase">sách mới nhất</p>
-            <div className="bookFrame">
+        <div className="Book__Container">
+            <div className="Book__PageName">books</div>
+            <p className="Book__TextUppercase">sách mới nhất</p>
+            <div className="Book__Frame">
                 {(items !== "") ? (
                     <>
                         {items.map((item, index) => (
-                            <div className="bookItem" key={index}>
-                                <img className="bookCover" alt="Book Cover" src={item.image} />
-                                <div className="bookInfo">
-                                    <p className="bookAuthor">{item.author}</p>
-                                    <a className="bookTitle" rel="noreferrer" target="_blank" href={item.link}>{item.title}</a>
-                                    <p className="bookDate" >{item.yearOfPublication}</p>
+                            < div className="Book__Item" key={index} onClick={() => {
+                                window.open(item.link, "_blank");
+                            }}>
+                                <img className="Book__Cover" alt="Book Cover" src={item.image} />
+                                <div className="Book__Info">
+                                    <p className="Book__Author">{item.author}</p>
+                                    <p className="Book__Title">{item.title}</p>
+                                    <p className="Book__Date" >{item.yearOfPublication}</p>
                                 </div>
                             </div>
                         ))}

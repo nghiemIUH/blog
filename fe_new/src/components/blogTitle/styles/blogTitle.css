@@ -1,19 +1,35 @@
-.blogTitleContainer{
+.blogTitle__Container{
     padding-top: 120px;
     width: 70%;
     margin: auto;
 }
 
-.blogTitleHead{
-    /* display: flex; */
+.blogTitle__Head{
+    display: flex;
     padding-bottom: 20px;
     border-bottom: 1px solid #696969;
 }
 
-.blogTitlePageName{
+.blogTitle__PageName{
     text-transform: uppercase!important;
     color: #004999;
     text-align: center;
+    width: 100%;
+    margin-left: 10px;
     font-size: 30px;
     font-weight: 600;
+}
+
+button{
+    border: none;
+    background-color: inherit;
+    margin-left: -110px;
+    z-index: 1;
+    position: fixed;
+}
+
+.blogTitle__Icon{
+    zoom: 2;  
+    margin: -5px;
+    margin-right: 5px;
 }

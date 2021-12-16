@@ -41,19 +41,19 @@ export default function Signin({ Login, error }) {
     }
 
     return (
-        <form onSubmit={submitHandle}>
-            <div className="title">Đăng nhập</div>
-            <div className="content">
-                <label className="label_in" htmlFor="userName">User Name: </label>
-                <input className="inp" type="text" name="User Name" id="userName" required placeholder="Tài khoản"
+        <form className="SignIn__Form" onSubmit={submitHandle}>
+            <div className="SignIn__PageName">Đăng nhập</div>
+            <div className="SignIn__Content">
+                <label className="SignIn__Label_in" htmlFor="userName">User Name: </label>
+                <input className="SignIn__Inp" type="text" name="User Name" id="userName" required placeholder="Tài khoản"
                     onChange={e => setDetails({ ...details, userName: e.target.value })} value={details.userName} />
-                <label className="label_in" htmlFor="password">Password: </label>
-                <input className="inp" type="password" name="password" id="password" required placeholder="Mật khẩu"
+                <label className="SignIn__Label_in" htmlFor="password">Password: </label>
+                <input className="SignIn__Inp" type="password" name="password" id="password" required placeholder="Mật khẩu"
                     onChange={e => setDetails({ ...details, password: e.target.value })} value={details.password} />
             </div>
-            <p className="err">{error}</p>
-            <div className="btn-frame">
-                <input className="btn" type="submit" value="Đăng nhập" />
+            <p className="SignIn__Err">{error}</p>
+            <div className="SignIn__Btn-frame">
+                <input className="SignIn__Btn" type="submit" value="Đăng nhập" />
             </div>
         </ form>
     )

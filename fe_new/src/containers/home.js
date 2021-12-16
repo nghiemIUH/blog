@@ -1,5 +1,4 @@
-import { Home } from '../components';
-import { Feature } from '../components';
+import { Home, Feature } from '../components';
 
 export function HomeContainer() {
     return (

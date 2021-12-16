@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import * as ROUTES from './constants/routes';
-import { Home, Blogs, Books, Signin, Signup, Editor } from './pages/index'
+import { Home, Blogs, Books, Signin, Signup, Editor, AddBook } from './pages/index'
 
 
 function App() {
@@ -23,6 +23,9 @@ function App() {
       </Route>
       <Route exact path={ROUTES.EDITOR}>
         <Editor />
+      </Route>
+      <Route exact path={ROUTES.ADDBOOK}>
+        <AddBook />
       </Route>
     </Router>
   );

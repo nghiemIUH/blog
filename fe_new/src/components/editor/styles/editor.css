@@ -1,14 +1,10 @@
-button:hover {
-    cursor: pointer;
-}
-
-.editorContainer{
+.Editor__Container{
     padding-top: 120px;
     width: 70%;
     margin: auto;
 }
 
-.editorPageName{
+.Editor__PageName{
     text-transform: uppercase!important;
     color: #004999;
     padding-bottom: 20px;
@@ -18,7 +14,7 @@ button:hover {
     border-bottom: 1px solid #696969;
 }
 
-.title{
+.Editor__Title{
     text-align: left;
     margin: 10px 0;
     padding: 1%;
@@ -27,7 +23,7 @@ button:hover {
     border: none;
 }
 
-.btnPost{
+.Editor__BtnPost{
     margin: 20px;
     padding: 10px;
     background-color: #3acbf7;
@@ -37,6 +33,10 @@ button:hover {
     font-weight: bold;
 }
 
-.btnPost:disabled{
+.Editor__BtnPost:disabled{
     display: none;
+}
+
+.Editor__BtnPost:hover{
+    background-color:  #00b7ff;
 }

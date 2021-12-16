@@ -1,13 +1,14 @@
-import "./styles/blogTitle.css"
+import "./styles/blogTitle.css";
+import { BsArrowLeftCircle } from "react-icons/bs";
 
 export default function BlogTitle({ blog, goBack }) {
     return (
-        <div className="blogTitleContainer">
-            <div className="blogTitleHead">
+        <div className="blogTitle__Container">
+            <div className="blogTitle__Head">
                 <button onClick={() => {
                     goBack();
-                }}>go back</button>
-                <div className="blogTitlePageName">{blog.title}</div>
+                }}><BsArrowLeftCircle className="blogTitle__Icon" />Go back</button>
+                <div className="blogTitle__PageName">{blog.title}</div>
             </div>
             <div dangerouslySetInnerHTML={{ __html: blog.content }} />
         </div>
