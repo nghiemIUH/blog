@@ -2,19 +2,45 @@ import json
 import requests
 from django.views import generic
 from django.http import HttpResponse
-from rest_framework.permissions import AllowAny
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
+from . import sualoi
+import pickle
+import tensorflow as tf
 # Create your views here.
+with open('chat/models/token1.pkl', 'rb') as f:
+    tokenizer_ipt, tokenizer_opt = pickle.load(f)
 
+num_layers = 4
+d_model = 256
+dff = 512
+num_heads = 8
+ipt_vocab_size = tokenizer_ipt.vocab_size + 2
+opt_vocab_size = tokenizer_opt.vocab_size + 2
+dropout_rate = 0.2
+
+transformer = sualoi.Transformer(num_layers=num_layers, d_model=d_model, num_heads=num_heads, dff=dff,
+                                 input_vocab_size=ipt_vocab_size, target_vocab_size=opt_vocab_size,
+                                 pe_input=ipt_vocab_size,
+                                 pe_target=opt_vocab_size,
+                                 rate=dropout_rate)
+checkpoint_path = "chat/models"
+
+ckpt = tf.train.Checkpoint(transformer=transformer,)
+
+ckpt_manager = tf.train.CheckpointManager(ckpt, checkpoint_path, max_to_keep=5)
+if ckpt_manager.latest_checkpoint:
+    ckpt.restore(ckpt_manager.latest_checkpoint)
 
 # Facebook API
 PAGE_ACCESS_TOKEN = "EAAK0AI5bxoQBAPA0ZCHr9Q8xXqfNQU7kbKV46iTcyeV8o0OeQVW7XeHYcVQRA6M8YiKg3TaoTqXbByfd9fR07PWmRzvmfyP2D0i9Dbr220aVhKYfrZAnC9RWzG1DZAJSYq30afLfXpGzSgd56vk20BSYgFPhvWKJqvvEL1kpCjC6D5WQzRg"
 VERIFY_TOKEN = "rasademo"
 
 
-def post_facebook_message(fbid, recevied_message, sua_loi=True):
-
+def post_facebook_message(fbid, recevied_message):
+    recevied_message = sualoi.predict(recevied_message, tokenizer_ipt,
+                                      tokenizer_opt, transformer, maxlen=150)
+    print(recevied_message)
     data = json.dumps({"message": "%s" % recevied_message, "sender": "Me"})
     p = requests.post('http://localhost:5005/webhooks/rest/webhook',
                       headers={"Content-Type": "application/json"}, data=data).json()
@@ -30,7 +56,6 @@ def post_facebook_message(fbid, recevied_message, sua_loi=True):
             "text": response
         }
     }
-    print(response)
     send(fbid, json_file)
 
 
@@ -48,12 +73,9 @@ def send(fbid, json_file):
     response_msg = json.dumps(json_file)
     status = requests.post(post_message_url, headers={
                            "Content-Type": "application/json"}, data=response_msg)
-    print(user_details, status)
 
 
 class BotView(generic.View):
-    permission_classes = [AllowAny]
-
     def get(self, request, *args, **kwargs):
         if self.request.GET['hub.verify_token'] == VERIFY_TOKEN:
             return HttpResponse(self.request.GET['hub.challenge'])
@@ -74,7 +96,7 @@ class BotView(generic.View):
                             message['sender']['id'], message['message']['text'])
                     except:
                         post_facebook_message(
-                            message['sender']['id'], ":D :D", sua_loi=False)
+                            message['sender']['id'], ":D :D")
                 if 'postback' in message:
                     post_facebook_message(
                         message['sender']['id'], message['postback']['payload'])

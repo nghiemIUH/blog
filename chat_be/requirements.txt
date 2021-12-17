@@ -1,0 +1,5 @@
+tensorflow==2.3
+rasa==2.7
+django
+tensorflow-datasets
+unidecode
