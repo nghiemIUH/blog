@@ -23,19 +23,23 @@ export function NavContainer() {
                     <Nav.ButtonLink to={ROUTES.SIGN_UP}>Sign Up</Nav.ButtonLink>
                 </>
                 ) : (<>
-                    <Nav.ButtonLink to={ROUTES.EDITOR}>Add Blog</Nav.ButtonLink>
-                    {(JSON.parse(Cookies.get("user")).isAdmin === true) ? (
-                        <>
-                            <Nav.ButtonLink to="#">Add Book</Nav.ButtonLink>
-                        </>
-                    ) : (<></>)}
-                    <Nav.Button onClick={() => {
-                        localStorage.removeItem("avatar");
-                        Cookies.remove("token");
-                        Cookies.remove("user")
-                        window.location.href = ROUTES.SIGN_IN;
-                    }}>Logout</Nav.Button>
-                    <Nav.Ava to="" alt="user" src={localStorage.getItem("avatar")} />
+                    <Nav.User>
+                        <Nav.Ava alt="user" src={localStorage.getItem("avatar")} />
+                        <Nav.Menu2>
+                            <Nav.Menu2Item to={""}>User</Nav.Menu2Item>
+                            <Nav.Menu2Item to={ROUTES.EDITOR}>Add Blog</Nav.Menu2Item>
+                            {(JSON.parse(Cookies.get("user")).isAdmin === true) ? (
+                                <>
+                                    <Nav.Menu2Item to={ROUTES.ADDBOOK}>Add Book</Nav.Menu2Item>
+                                </>
+                            ) : (<></>)}
+                            <Nav.Menu2Item onClick={() => {
+                                localStorage.removeItem("avatar");
+                                Cookies.remove("token");
+                                Cookies.remove("user");
+                            }} to={ROUTES.SIGN_IN}  >Logout</Nav.Menu2Item>
+                        </Nav.Menu2>
+                    </Nav.User>
                 </>)}
             </Nav.Menu>
         </Nav>

@@ -1,4 +1,4 @@
-.pageName{
+.Book__PageName{
     text-transform: uppercase!important;
     color: #004999;
     padding-bottom: 20px;
@@ -9,32 +9,38 @@
     border-bottom: 1px solid #696969;
 }
 
-.bookFrame{
+.Book__Frame{
     width: 100%;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-gap: 10px;
 }
 
-.textUppercase{
+.Book__TextUppercase{
     text-decoration: none;
     color: #004999;
     text-transform: uppercase!important;
 }
 
-.bookContainer{
+.Book__Container{
     padding-top: 120px;
     width: 70%;
     margin: auto;
 }
 
-.bookItem{
+.Book__Item{
     display: flex;
     margin: 10px 10px;
+    padding-top: 10px;
     min-height: 80px;
 }
 
-.bookCover{
+.Book__Item:hover{
+    background: blanchedalmond;
+}
+
+
+.Book__Cover{
     object-fit: contain;
     margin-left: 10px;
     background: white;
@@ -42,7 +48,7 @@
     width: 65px;
 }
 
-.bookInfo{
+.Book__Info{
     height: 80px;
     padding: 0 20px;
     margin-bottom: 10px;
@@ -50,24 +56,20 @@
     height: auto
 }
 
-.bookAuthor{
+.Book__Author{
     font-size: 14px;
     margin: unset;
     text-decoration: none;
     color: #004999;
 }
 
-.bookTitle{
+.Book__Title{
     text-decoration: none;
     color: #000000;
     font-size: 20px;
 }
 
-.bookTitle:hover{
-    color: #004999;
-}
-
-.bookDate{
+.Book__Date{
     color: #696969;
     margin: unset;
     font-size: 14px;

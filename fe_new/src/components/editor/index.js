@@ -2,11 +2,9 @@ import React from "react";
 import "./styles/editor.css"
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import "react-quill/dist/quill.bubble.css";
 import Quill from "quill";
 import ImageResize from "quill-image-resize-module-react";
 import Cookies from "js-cookie";
-import { BLOGS } from "../../constants/routes";
 Quill.register("modules/imageResize", ImageResize);
 
 const axios = require("axios");
@@ -86,21 +84,18 @@ export default class Editor extends React.Component {
         }).then((response) => {
             if (response.statusText === "OK") {
                 alert("Đăng blog thành công");
-                window.location.href = BLOGS;
+                window.location.reload(true);
             } else {
                 alert("Lỗi đăng blog");
             }
-        }
-
-
-        );
+        });
     };
 
     render() {
         return (
-            <div className="editorContainer">
-                <div className="editorPageName">add blog</div>
-                <input className="title" placeholder="Tiêu đề ..." required onChange={this.titleChange} />
+            <div className="Editor__Container">
+                <div className="Editor__PageName">add blog</div>
+                <input className="Editor__Title" placeholder="Tiêu đề ..." required onChange={this.titleChange} />
                 <ReactQuill
                     style={{ width: "100%" }}
                     theme="snow"
@@ -109,7 +104,7 @@ export default class Editor extends React.Component {
                     onChange={this.contentChange}
                     placeholder="Nội dung..."
                 />
-                <button className="btnPost"
+                <button className="Editor__BtnPost"
                     disabled={this.state.content === undefined || this.state.content === "<p><br></p>"
                         || this.state.title === undefined || this.state.title === "<p><br></p>"
                     } onClick={this.handleSubmit}>

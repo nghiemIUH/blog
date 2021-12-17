@@ -1,12 +1,12 @@
-import { BlogsContainer } from "../containers/blogs"
+import { AddBookContainer } from "../containers/addBook";
 import { NavContainer } from "../containers/nav"
 import { FooterContainer } from "../containers/footer"
 
-export default function Blogs() {
+export default function AddBook() {
     return (
         <>
             <NavContainer />
-            <BlogsContainer />
+            <AddBookContainer />
             <FooterContainer />
         </>
     )

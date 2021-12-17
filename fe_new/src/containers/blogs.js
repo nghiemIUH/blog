@@ -1,5 +1,4 @@
-import { BlogTitle } from '../components';
-import Blogs from "../components/blogs";
+import { BlogTitle, Blogs } from '../components';
 import { useState } from "react";
 
 export function BlogsContainer() {
@@ -12,7 +11,7 @@ export function BlogsContainer() {
             let list = await fetch("http://localhost:5000/blog", { method: 'GET' })
                 .then(response => response.json())
                 .catch();
-            return list;
+            return list.slice(0, 20).reverse();
         } catch (error) {
             return []
         }

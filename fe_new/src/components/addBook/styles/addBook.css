@@ -1,13 +1,12 @@
-.signUpForm{
-    padding-top: 100px;
-    display: block;
-    width: 600px;
+.AddBook__Container{
+    padding-top: 120px;
+    width: 70%;
     margin: auto;
 }
 
-.signUpPageName{
-    padding: 20px 0;
+.AddBook__PageName{
     text-transform: uppercase!important;
+    padding-bottom: 20px;
     text-align: center;
     color: #004999;
     font-size: 30px;
@@ -15,48 +14,57 @@
     border-bottom: 1px solid #696969;
 }
 
-.signUpContent{
-    padding: 20px 0;
+.AddBook__Frame{
+    padding-top: 20px;
+    margin: auto;
+    width: 600px;
+}
+
+.AddBook__Content{
     display: grid;
-    grid-template-columns: 150px 400px;
+    grid-template-columns: 30% 70%;
     grid-gap: 10px;
     justify-content: center;
 }
 
-.signUpLabel_in{
+.AddBook__Label_in{
     color: #000000;
     margin: auto;
     width: 100%;
 }
 
-.signUpInp{
+.AddBook__Inp{
     width: 100%;
     border: 0;
     height: 40px;
     box-sizing: border-box;
 }
 
-.signUpErr{
+.AddBook__Err{
     text-align: center;
     color: red;
     margin-top: -20px;
 }
 
-.signUpBtn-frame{
+.AddBook__Btn-frame{
     display: flex;
     height: 30px;
     padding-top: 10px;
 }
 
-.signUpBtn{
+.AddBook__Btn{
     border-radius: 8px;
     width: fit-content;
     height: fit-content;
     padding: 5px 10px;
-    Background-color: #d9000b;
+    Background-color: #3acbf7;
     color: white;
     font-weight: bold;
     border: 0;
     text-decoration: none;
     margin: auto;
+}
+
+.AddBook__Btn:hover{
+    background-color:  #00b7ff;
 }
