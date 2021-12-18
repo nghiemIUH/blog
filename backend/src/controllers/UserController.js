@@ -36,7 +36,20 @@ class UserController {
                 if (err) {
                     response.status(500).send({ message: err });
                 } else {
-                    response.status(200).json({user});
+                    const userData = {
+                        _id: user._id,
+                        username: user.username,
+                        email: user.email,
+                        isAdmin: user.isAdmin,
+                        isUser: user.isUser,
+                        isStaff: user.isStaff,
+                    };
+                    const accessToken = jwt.sign(
+                        { data: userData },
+                        process.env.ACCESS_TOKEN_SECRET,
+                        { expiresIn: process.env.ACCESS_TOKEN_LIFE }
+                    );
+                    response.status(200).json({ accessToken, user });
                 }
             });
         }

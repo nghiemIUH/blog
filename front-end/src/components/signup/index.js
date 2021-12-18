@@ -10,7 +10,7 @@ export default function Signup({ Register, error }) {
 
     const resizeFile = (file) =>
         new Promise((resolve) => {
-            Resizer.imageFileResizer(file, 300, 300, "JPEG", 100, 0, (uri) => { resolve(uri); }, "base64");
+            Resizer.imageFileResizer(file, 200, 200, "JPEG", 100, 0, (uri) => { resolve(uri); }, "base64");
         });
 
     const toBase64 = async e => {

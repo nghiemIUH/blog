@@ -4,6 +4,7 @@ import { Footer } from "../components";
 export function FooterContainer() {
     return (
         <Footer>
+            {/* <FB_Chat /> */}
             <Footer.Row>
                 {/* <Footer.Column>
                     <Footer.Title>GIỚI THIỆU</Footer.Title>

@@ -7,7 +7,7 @@ export function NavContainer() {
     var name = ""
     try {
         name = JSON.parse(Cookies.get("user")).fullName;
-        console.log(Cookies.get("token"))
+        // console.log(Cookies.get("token"))
     } catch (error) { }
 
     return (
