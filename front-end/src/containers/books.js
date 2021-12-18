@@ -1,5 +1,6 @@
 import { Books } from "../components";
 import { useState } from "react";
+import { ip } from "../IP";
 
 export function BooksContainer() {
 
@@ -7,7 +8,7 @@ export function BooksContainer() {
 
     async function loadBooks() {
         try {
-            let list = await fetch("http://localhost:5000/book", { method: 'GET' })
+            let list = await fetch({ ip } + "/book", { method: 'GET' })
                 .then(response => response.json())
                 .catch();
             return list.slice(0, 20).reverse();

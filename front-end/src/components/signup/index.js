@@ -1,7 +1,8 @@
 import Cookies from "js-cookie";
 import { useState } from "react"
 import Resizer from "react-image-file-resizer";
-import "./styles/signup.css"
+import "./styles/signup.css";
+import { ip } from "../../IP";
 
 export default function Signup({ Register, error }) {
 
@@ -35,7 +36,7 @@ export default function Signup({ Register, error }) {
             })
         }
         try {
-            await fetch("http://localhost:5000/user/sign-up", requestSiginup)
+            await fetch({ ip } + "/user/sign-up", requestSiginup)
                 .then(response => response.json())
                 .then(i => {
                     try {

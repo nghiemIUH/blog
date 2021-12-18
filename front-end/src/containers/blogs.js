@@ -1,5 +1,6 @@
 import { BlogTitle, Blogs } from '../components';
 import { useState } from "react";
+import { ip } from '../IP';
 
 export function BlogsContainer() {
 
@@ -8,7 +9,7 @@ export function BlogsContainer() {
 
     async function loadBlog() {
         try {
-            let list = await fetch("http://localhost:5000/blog", { method: 'GET' })
+            let list = await fetch({ ip } + "/blog", { method: 'GET' })
                 .then(response => response.json())
                 .catch();
             return list.slice(0, 20).reverse();

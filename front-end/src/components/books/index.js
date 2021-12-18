@@ -1,6 +1,7 @@
 import "./styles/books.css";
 import { MdDeleteForever } from "react-icons/md";
 import Cookies from "js-cookie";
+import { ip } from "../../IP";
 
 export default function Books({ books }) {
     var items = "";
@@ -25,7 +26,7 @@ export default function Books({ books }) {
                 })
             }
             try {
-                await fetch("http://localhost:5000/book/delete", request)
+                await fetch({ ip } + "/book/delete", request)
                     .then(response => response.json())
                     .then(i => {
                         if (i.message === "ok") {
