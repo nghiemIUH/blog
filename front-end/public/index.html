@@ -9,22 +9,18 @@
   <meta name="description" content="Web site created using create-react-app" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <style>
-    ._94vh {
-      margin-top: 210px;
-      height: 500px;
-    }
-  </style>
+  <link rel="stylesheet" href="%PUBLIC_URL%/index.css">
 
   <title>Blogs</title>
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this web.</noscript>
+  <div id="root"></div>
 
   <!-- Messenger Plugin chat Code -->
   <div id="fb-root"></div>
-  <div id="fb-customer-chat" class="fb-customerchat">
+  <div id="fb-customer-chat" class="fb-customerchat" style="">
   </div>
   <script>
     var chatbox = document.getElementById('fb-customer-chat');
@@ -47,7 +43,6 @@
     }(document, 'script', 'facebook-jssdk'));
   </script>
 
-  <div id="root"></div>
 </body>
 
 </html>
