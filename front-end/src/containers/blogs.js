@@ -9,7 +9,7 @@ export function BlogsContainer() {
 
     async function loadBlog() {
         try {
-            let list = await fetch({ ip } + "/blog", { method: 'GET' })
+            let list = await fetch(ip + "/blog", { method: 'GET' })
                 .then(response => response.json())
                 .catch();
             return list.slice(0, 20).reverse();

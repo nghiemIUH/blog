@@ -38,7 +38,7 @@ export default function AddBook() {
             })
         }
         try {
-            await fetch({ ip } + "/book/add-book", request)
+            await fetch(ip + "/book/add-book", request)
                 .then(response => response.json())
                 .then(i => {
                     console.log(i.message)

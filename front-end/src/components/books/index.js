@@ -26,7 +26,7 @@ export default function Books({ books }) {
                 })
             }
             try {
-                await fetch({ ip } + "/book/delete", request)
+                await fetch(ip + "/book/delete", request)
                     .then(response => response.json())
                     .then(i => {
                         if (i.message === "ok") {

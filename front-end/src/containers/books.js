@@ -8,7 +8,7 @@ export function BooksContainer() {
 
     async function loadBooks() {
         try {
-            let list = await fetch({ ip } + "/book", { method: 'GET' })
+            let list = await fetch(ip + "/book", { method: 'GET' })
                 .then(response => response.json())
                 .catch();
             return list.slice(0, 20).reverse();

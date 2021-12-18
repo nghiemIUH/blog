@@ -20,7 +20,7 @@ export default function Signin({ Login, error }) {
             })
         }
         try {
-            await fetch({ ip } + "/user/sign-in", requestLogin)
+            await fetch(ip + "/user/sign-in", requestLogin)
                 .then(response => response.json())
                 .then(i => {
                     try {

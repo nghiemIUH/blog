@@ -36,7 +36,7 @@ export default function Signup({ Register, error }) {
             })
         }
         try {
-            await fetch({ ip } + "/user/sign-up", requestSiginup)
+            await fetch(ip + "/user/sign-up", requestSiginup)
                 .then(response => response.json())
                 .then(i => {
                     try {
