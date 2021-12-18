@@ -1,41 +1,34 @@
-import "./App.css";
-import Home from "./components/Home";
-import { BrowserRouter, Route } from "react-router-dom";
-import Blog from "./components/blog/Blog";
-import Product from "./components/product/Product";
-import BlogDetail from "./components/blog/BlogDetail";
-import SignUp from "./components/user/SignUp";
-import Login from "./components/user/LogIn";
-import Editor from "./components/blog/Editor";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import * as ROUTES from './constants/routes';
+import { Home, Blogs, Books, Signin, Signup, Editor, AddBook } from './pages/index'
+
 
 function App() {
-    return (
-        <BrowserRouter>
-            <div className="App">
-                <Route exact path="/">
-                    <Home />
-                </Route>
-                <Route exact path="/blog">
-                    <Blog />
-                </Route>
-                <Route exact path="/product">
-                    <Product />
-                </Route>
-                <Route exact path="/blog/detail/:title">
-                    <BlogDetail />
-                </Route>
-                <Route exact path="/sign-up">
-                    <SignUp />
-                </Route>
-                <Route exact path="/log-in">
-                    <Login />
-                </Route>
-                <Route exact path="/editor">
-                    <Editor />
-                </Route>
-            </div>
-        </BrowserRouter>
-    );
+  return (
+    <Router>
+      <Route exact path={ROUTES.HOME}>
+        <Home />
+      </Route>
+      <Route exact path={ROUTES.BLOGS}>
+        <Blogs />
+      </Route>
+      <Route exact path={ROUTES.BOOKS}>
+        <Books />
+      </Route>
+      <Route exact path={ROUTES.SIGN_IN}>
+        <Signin />
+      </Route>
+      <Route exact path={ROUTES.SIGN_UP}>
+        <Signup />
+      </Route>
+      <Route exact path={ROUTES.EDITOR}>
+        <Editor />
+      </Route>
+      <Route exact path={ROUTES.ADDBOOK}>
+        <AddBook />
+      </Route>
+    </Router>
+  );
 }
 
-export default App;
+export default App

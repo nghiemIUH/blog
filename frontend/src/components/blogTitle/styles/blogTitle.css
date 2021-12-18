@@ -1,0 +1,41 @@
+.blogTitle__Container{
+    padding-top: 120px;
+    width: 70%;
+    margin: auto;
+}
+
+.blogTitle__Head{
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #696969;
+}
+
+.blogTitle__PageName{
+    text-transform: uppercase!important;
+    color: #004999;
+    text-align: center;
+    width: 100%;
+    margin-left: 10px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.blogTitle_Button{
+    border: none;
+    background-color: inherit;
+    margin-left: -120px;
+    z-index: 1;
+    position: fixed;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.blogTitle_Button:hover{
+    background-color: blanchedalmond;
+}
+
+.blogTitle__Icon{
+    zoom: 2;  
+    margin: -5px;
+    margin-right: 5px;
+}

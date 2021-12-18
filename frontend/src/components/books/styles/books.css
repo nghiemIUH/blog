@@ -1,0 +1,92 @@
+.Book__PageName{
+    text-transform: uppercase!important;
+    color: #004999;
+    padding-bottom: 20px;
+    text-align: center;
+    color: #004999;
+    font-size: 30px;
+    font-weight: 600;
+    border-bottom: 1px solid #696969;
+}
+
+.Book__Frame{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 10px;
+}
+
+.Book__TextUppercase{
+    text-decoration: none;
+    color: #004999;
+    text-transform: uppercase!important;
+}
+
+.Book__Container{
+    padding-top: 120px;
+    width: 70%;
+    margin: auto;
+}
+
+.Book__Item{
+    display: flex;
+    margin: 10px 10px;
+    padding-top: 10px;
+    min-height: 80px;
+}
+
+.Book__Content{
+    display: flex;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.Book__Content:hover{
+    background: blanchedalmond;
+}
+
+.Book__Cover{
+    object-fit: contain;
+    margin-left: 10px;
+    background: white;
+    height: 65px;
+    width: 65px;
+}
+
+.Book__Info{
+    height: 80px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    display: inline-grid;
+    height: auto
+}
+
+.Book__Author{
+    font-size: 14px;
+    margin: unset;
+    text-decoration: none;
+    color: #004999;
+}
+
+.Book__Title{
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+}
+
+.Book__Date{
+    color: #696969;
+    margin: unset;
+    font-size: 14px;
+}
+
+.Book__Date{
+    color: #696969;
+    margin: unset;
+    font-size: 14px;
+}
+
+.Book__Delete{
+    padding-top: 10px;
+    zoom: 2;
+}
