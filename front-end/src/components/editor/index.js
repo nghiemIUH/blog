@@ -1,5 +1,6 @@
 import React from "react";
-import "./styles/editor.css"
+import { ip } from '../../IP';
+import "./styles/editor.css";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import Quill from "quill";
@@ -78,7 +79,7 @@ export default class Editor extends React.Component {
         };
         axios({
             method: "post",
-            url: "http://127.0.0.1:5000/blog/add-blog",
+            url: ip + "/blog/add-blog",
             data: data,
             headers: header,
         }).then((response) => {

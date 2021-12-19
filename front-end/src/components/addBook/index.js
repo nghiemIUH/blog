@@ -2,7 +2,7 @@ import './styles/addBook.css';
 import { useState } from "react";
 import Resizer from "react-image-file-resizer";
 import Cookies from 'js-cookie';
-import { ip } from '../../IP'
+import { ip } from '../../IP';
 
 export default function AddBook() {
 

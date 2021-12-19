@@ -22,7 +22,7 @@ export default function Books({ books }) {
                                     <div className="Book__Info">
                                         <p className="Book__Author">{item.author}</p>
                                         <p className="Book__Title">{item.title}</p>
-                                        <p className="Book__Date" >{item.yearOfPublication}</p>
+                                        <p className="Book__Date" >Năm xuất bản: {item.yearOfPublication}</p>
                                     </div>
                                 </div>
                             </div>
