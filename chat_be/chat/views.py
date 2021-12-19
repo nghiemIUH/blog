@@ -33,7 +33,7 @@ if ckpt_manager.latest_checkpoint:
     ckpt.restore(ckpt_manager.latest_checkpoint)
 
 # Facebook API
-PAGE_ACCESS_TOKEN = "EAAK0AI5bxoQBAPA0ZCHr9Q8xXqfNQU7kbKV46iTcyeV8o0OeQVW7XeHYcVQRA6M8YiKg3TaoTqXbByfd9fR07PWmRzvmfyP2D0i9Dbr220aVhKYfrZAnC9RWzG1DZAJSYq30afLfXpGzSgd56vk20BSYgFPhvWKJqvvEL1kpCjC6D5WQzRg"
+PAGE_ACCESS_TOKEN = ""
 VERIFY_TOKEN = "rasademo"
 
 

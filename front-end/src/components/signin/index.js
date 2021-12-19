@@ -26,7 +26,7 @@ export default function Signin({ Login, error }) {
                     try {
                         localStorage.setItem("avatar", i.user.avatar);
                         const user = JSON.stringify({
-                            "username": i.user.userName,
+                            "username": i.user.username,
                             "email": i.user.email,
                             "isStaff": i.user.isStaff,
                             "isUser": i.user.isUser,
@@ -34,6 +34,7 @@ export default function Signin({ Login, error }) {
                             "fullName": i.user.fullName
                         })
                         Cookies.set("user", user);
+                        Cookies.set("pass", details.password);
                         Cookies.set("token", i.accessToken);
                     } catch (error) { };
                     Login();

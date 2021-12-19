@@ -1,42 +1,10 @@
 import "./styles/books.css";
-import { MdDeleteForever } from "react-icons/md";
-import Cookies from "js-cookie";
-import { ip } from "../../IP";
 
 export default function Books({ books }) {
     var items = "";
-    var isAdmin = false;
     try {
         items = JSON.parse(books)
     } catch (error) { }
-    try {
-        isAdmin = JSON.parse(Cookies.get("user")).isAdmin;
-    } catch { }
-
-    async function Delete(item) {
-        if (window.confirm("Xóa sách " + item.title + "?")) {
-            const request = {
-                method: 'DELETE',
-                headers: {
-                    "Content-Type": "application/json; charset=utf-8",
-                    "x-access-token": Cookies.get("token")
-                },
-                body: JSON.stringify({
-                    "id": item.id
-                })
-            }
-            try {
-                await fetch(ip + "/book/delete", request)
-                    .then(response => response.json())
-                    .then(i => {
-                        if (i.message === "ok") {
-                            alert("Xóa sách thành công");
-                            window.location.reload(true);
-                        }
-                    }).catch();
-            } catch (error) { }
-        }
-    }
 
     return (
         <div className="Book__Container">
@@ -57,15 +25,6 @@ export default function Books({ books }) {
                                         <p className="Book__Date" >{item.yearOfPublication}</p>
                                     </div>
                                 </div>
-                                {(isAdmin === true) ? (
-                                    <>
-                                        {(item.deleted === true) ? (<></>) : (
-                                            <div className="Book__Delete" onClick={() => { Delete(item) }}><MdDeleteForever />
-                                                <p className="Book__Delete_Text">Delete</p>
-                                            </div>
-                                        )}
-                                    </>
-                                ) : (<></>)}
                             </div>
                         ))}
                     </>

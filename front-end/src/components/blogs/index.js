@@ -1,5 +1,4 @@
 import "./styles/blog.css";
-import { MdDeleteForever } from "react-icons/md";
 
 export default function Blogs({ blogs, getBlog }) {
     var items = ""
@@ -7,10 +6,6 @@ export default function Blogs({ blogs, getBlog }) {
         items = JSON.parse(blogs)
     } catch (error) { }
 
-    function Delete(item) {
-        if (window.confirm("ok")) {
-        }
-    };
 
     return (
         <div className="Blog__Container">
@@ -30,7 +25,6 @@ export default function Blogs({ blogs, getBlog }) {
                                         <p className="Blog__Title">{item.title}</p>
                                     </div>
                                 </div>
-                                <div className="Blog__Delete" onClick={() => { Delete(item) }}><MdDeleteForever /></div>
                             </div>
                         ))
                     }

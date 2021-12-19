@@ -13,7 +13,8 @@ export function SignupContainer() {
             window.location.href = HOME;
         } catch (error) {
             Cookies.remove("token");
-            Cookies.remove("user")
+            Cookies.remove('pass');
+            Cookies.remove("user");
             localStorage.removeItem("avatar")
             if (Cookies.get("message") === "undefined") {
                 setError("Lỗi đăng kí");

@@ -26,7 +26,6 @@ export function NavContainer() {
                     <Nav.User>
                         <Nav.Ava alt="user" src={localStorage.getItem("avatar")} />
                         <Nav.Menu2>
-                            <Nav.Menu2Item to={""}>User</Nav.Menu2Item>
                             <Nav.Menu2Item to={ROUTES.EDITOR}>Add Blog</Nav.Menu2Item>
                             {(JSON.parse(Cookies.get("user")).isAdmin === true) ? (
                                 <>

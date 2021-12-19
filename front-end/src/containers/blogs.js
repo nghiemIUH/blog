@@ -1,6 +1,6 @@
 import { BlogTitle, Blogs } from '../components';
 import { useState } from "react";
-import { ip } from '../IP';
+import { ip } from "../IP";
 
 export function BlogsContainer() {
 
