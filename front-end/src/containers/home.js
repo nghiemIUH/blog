@@ -1,4 +1,4 @@
-import { Home, Feature } from '../components';
+import { Home, Feature, About } from '../components';
 
 export function HomeContainer() {
     return (
@@ -13,6 +13,7 @@ export function HomeContainer() {
                     </Feature.SubTitle>
                 </Feature>
             </Home.Head>
+            <About />
         </Home>
     )
 }

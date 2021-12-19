@@ -1,6 +1,6 @@
 import { Nav } from "../components";
 import * as ROUTES from '../constants/routes';
-import logo from '../logo.png'
+import logo from '../logo.png';
 import Cookies from "js-cookie";
 
 export function NavContainer() {

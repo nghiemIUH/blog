@@ -2,6 +2,7 @@
     padding-top: 120px;
     width: 70%;
     margin: auto;
+    min-height: 680px;
 }
 
 .blogTitle__Head{
@@ -27,11 +28,11 @@
     z-index: 1;
     position: fixed;
     padding: 15px;
-    border-radius: 5px;
 }
 
-.blogTitle_Button:hover{
-    background-color: blanchedalmond;
+.blogTitle_Button:hover .blogTitle__Icon{
+    background-color: #ff949a;
+    border-radius: 50%;
 }
 
 .blogTitle__Icon{

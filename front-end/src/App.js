@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import * as ROUTES from './constants/routes';
-import { Home, Blogs, Books, Signin, Signup, Editor, AddBook, User } from './pages/index'
+import { Home, Blogs, Books, Signin, Signup, Editor, AddBook } from './pages/index'
 
 
 function App() {
