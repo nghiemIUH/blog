@@ -1,1 +1,1 @@
-export const ip = 'https://13.214.103.105:5000'
+export const ip = 'https://genzteam.tk'
